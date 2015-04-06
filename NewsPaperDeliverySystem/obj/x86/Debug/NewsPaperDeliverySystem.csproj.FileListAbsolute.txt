@@ -1,0 +1,8 @@
+C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\bin\Debug\NewsPaperDeliverySystem.exe
+C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\bin\Debug\NewsPaperDeliverySystem.pdb
+C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.csprojResolveAssemblyReference.cache
+C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.Form1.resources
+C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.Properties.Resources.resources
+C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.csproj.GenerateResource.Cache
+C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.exe
+C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.pdb

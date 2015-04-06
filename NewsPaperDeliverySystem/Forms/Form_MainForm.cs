@@ -15,6 +15,7 @@ namespace NewsPaperDeliverySystem
         {
             // test
             InitializeComponent();
+            this.labelDate.Text = DateTime.Now.ToString("M/d/yyyy");
         }
     }
 }
