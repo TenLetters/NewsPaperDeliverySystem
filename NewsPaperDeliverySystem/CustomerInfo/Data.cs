@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace NewsPaperDeliverSystem.CustomerInfo
+namespace NewsPaperDeliverySystem.CustomerInfo
 {
     class Data
     {
         List<Customer> customerList;
 
-        public Data()
+        // default consctructor for a Data object
+        public Data(List<Customer> customers)
         {
-            customerList = new List<Customer>();
+            customerList = customers;
         }
 
+        // returns the list of customers
         public List<Customer> getCustomerList()
         {
             return customerList;
         }
 
+        // returns the customer with a matching ID from the list of customers
         public Customer getCustomerByID(int ID)
         {
             foreach (Customer customer in customerList)
@@ -27,6 +30,12 @@ namespace NewsPaperDeliverSystem.CustomerInfo
                     return customer;
             }
             return new Customer();
+        }
+
+        // returns the list of customers who have deliveries today
+        public List<Customer> getTodaysDeliveries()
+        {
+            return null;
         }
     }
 
