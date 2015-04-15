@@ -51,5 +51,10 @@ namespace NewsPaperDeliverySystem
                 this.treeViewTodaysDeliveries.Nodes.Add(tempNode);
             }
         }
+
+        private void buttonSaveCustomerInformation_Click(object sender, EventArgs e)
+        {
+            this.IOModule.writeCustomer(data.getCustomerList());
+        }
     }
 }

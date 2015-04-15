@@ -38,6 +38,7 @@
             this.buttonModifySubscriptions = new System.Windows.Forms.Button();
             this.buttonModifyCustomer = new System.Windows.Forms.Button();
             this.buttonAddNewCustomer = new System.Windows.Forms.Button();
+            this.buttonSaveCustomerInformation = new System.Windows.Forms.Button();
             this.groupBoxDeliveryServices.SuspendLayout();
             this.groupBoxCustomerInformation.SuspendLayout();
             this.SuspendLayout();
@@ -98,42 +99,53 @@
             // 
             // groupBoxCustomerInformation
             // 
+            this.groupBoxCustomerInformation.Controls.Add(this.buttonSaveCustomerInformation);
             this.groupBoxCustomerInformation.Controls.Add(this.buttonModifySubscriptions);
             this.groupBoxCustomerInformation.Controls.Add(this.buttonModifyCustomer);
             this.groupBoxCustomerInformation.Controls.Add(this.buttonAddNewCustomer);
             this.groupBoxCustomerInformation.Location = new System.Drawing.Point(423, 232);
             this.groupBoxCustomerInformation.Name = "groupBoxCustomerInformation";
-            this.groupBoxCustomerInformation.Size = new System.Drawing.Size(216, 161);
+            this.groupBoxCustomerInformation.Size = new System.Drawing.Size(216, 145);
             this.groupBoxCustomerInformation.TabIndex = 4;
             this.groupBoxCustomerInformation.TabStop = false;
             this.groupBoxCustomerInformation.Text = "Customer Information";
             // 
             // buttonModifySubscriptions
             // 
-            this.buttonModifySubscriptions.Location = new System.Drawing.Point(45, 103);
+            this.buttonModifySubscriptions.Location = new System.Drawing.Point(27, 78);
             this.buttonModifySubscriptions.Name = "buttonModifySubscriptions";
-            this.buttonModifySubscriptions.Size = new System.Drawing.Size(121, 23);
+            this.buttonModifySubscriptions.Size = new System.Drawing.Size(156, 23);
             this.buttonModifySubscriptions.TabIndex = 2;
             this.buttonModifySubscriptions.Text = "Modify Subscriptions";
             this.buttonModifySubscriptions.UseVisualStyleBackColor = true;
             // 
             // buttonModifyCustomer
             // 
-            this.buttonModifyCustomer.Location = new System.Drawing.Point(45, 62);
+            this.buttonModifyCustomer.Location = new System.Drawing.Point(27, 49);
             this.buttonModifyCustomer.Name = "buttonModifyCustomer";
-            this.buttonModifyCustomer.Size = new System.Drawing.Size(121, 23);
+            this.buttonModifyCustomer.Size = new System.Drawing.Size(156, 23);
             this.buttonModifyCustomer.TabIndex = 1;
             this.buttonModifyCustomer.Text = "Modify Customer";
             this.buttonModifyCustomer.UseVisualStyleBackColor = true;
             // 
             // buttonAddNewCustomer
             // 
-            this.buttonAddNewCustomer.Location = new System.Drawing.Point(45, 20);
+            this.buttonAddNewCustomer.Location = new System.Drawing.Point(27, 20);
             this.buttonAddNewCustomer.Name = "buttonAddNewCustomer";
-            this.buttonAddNewCustomer.Size = new System.Drawing.Size(121, 23);
+            this.buttonAddNewCustomer.Size = new System.Drawing.Size(156, 23);
             this.buttonAddNewCustomer.TabIndex = 0;
             this.buttonAddNewCustomer.Text = "Add New Customer";
             this.buttonAddNewCustomer.UseVisualStyleBackColor = true;
+            // 
+            // buttonSaveCustomerInformation
+            // 
+            this.buttonSaveCustomerInformation.Location = new System.Drawing.Point(27, 107);
+            this.buttonSaveCustomerInformation.Name = "buttonSaveCustomerInformation";
+            this.buttonSaveCustomerInformation.Size = new System.Drawing.Size(156, 23);
+            this.buttonSaveCustomerInformation.TabIndex = 3;
+            this.buttonSaveCustomerInformation.Text = "Save Customer Information";
+            this.buttonSaveCustomerInformation.UseVisualStyleBackColor = true;
+            this.buttonSaveCustomerInformation.Click += new System.EventHandler(this.buttonSaveCustomerInformation_Click);
             // 
             // Form1
             // 
@@ -167,6 +179,7 @@
         private System.Windows.Forms.Button buttonModifySubscriptions;
         private System.Windows.Forms.Button buttonModifyCustomer;
         private System.Windows.Forms.Button buttonAddNewCustomer;
+        private System.Windows.Forms.Button buttonSaveCustomerInformation;
     }
 }
 

@@ -15,5 +15,10 @@ namespace NewsPaperDeliverySystem.Forms
         {
             InitializeComponent();
         }
+
+        private void Form_AddCustomerForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

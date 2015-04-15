@@ -36,6 +36,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             this.name = name;
             this.address = address;
             this.subscriptions = subscriptions;
+            this.backlog = new List<Subscription>();
             this.id = id;
             this.vacationStart = vacationStart;
             this.vacationEnd = vacationEnd;
@@ -52,6 +53,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
                 this.name = customer.name;
                 this.address = customer.address;
                 this.id = customer.id;
+                this.backlog = new List<Subscription>();
                 // copy subscriptions from given list
                 this.subscriptions = subscriptions;
             }

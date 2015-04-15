@@ -28,7 +28,7 @@ namespace NewsPaperDeliverySystem.IOModule
             try
             {
                 // read the customer file
-                using(StreamReader reader = new StreamReader(customerFileName))
+                using(StreamReader reader = new StreamReader(customerDataFilePath + customerFileName))
                 {
                     List<Customer> customers = new List<Customer>();
                     Customer currentCustomer = new Customer();
@@ -36,7 +36,7 @@ namespace NewsPaperDeliverySystem.IOModule
                     // read through the whole file
                     while((line = reader.ReadLine()) != null)
                     {
-                        if(line.Equals("Begin Component"))
+                        if(line.Equals("Begin Customer"))
                         {
                             // start a new customer
                             currentCustomer = new Customer();

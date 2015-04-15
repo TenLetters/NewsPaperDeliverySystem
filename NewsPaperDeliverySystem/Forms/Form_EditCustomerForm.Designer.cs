@@ -36,23 +36,27 @@
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.groupBoxSubscriptions = new System.Windows.Forms.GroupBox();
-            this.comboBoxSubscriptions = new System.Windows.Forms.ComboBox();
             this.buttonAddSubscription = new System.Windows.Forms.Button();
-            this.labelSavedSubscription = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.labelCustomerSubscriptions = new System.Windows.Forms.Label();
             this.buttonOK = new System.Windows.Forms.Button();
             this.groupBoxVacations = new System.Windows.Forms.GroupBox();
-            this.textBoxSearchAddress = new System.Windows.Forms.TextBox();
-            this.labelSearchForAnAddress = new System.Windows.Forms.Label();
-            this.buttonSearch = new System.Windows.Forms.Button();
+            this.labelVacationEndDate = new System.Windows.Forms.Label();
+            this.labelVacationStartDate = new System.Windows.Forms.Label();
+            this.textBoxVacationEndDate = new System.Windows.Forms.TextBox();
+            this.textBoxVacationStartDate = new System.Windows.Forms.TextBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeaderMatchingAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.textBoxVacationStartDate = new System.Windows.Forms.TextBox();
-            this.textBoxVacationEndDate = new System.Windows.Forms.TextBox();
-            this.labelVacationStartDate = new System.Windows.Forms.Label();
-            this.labelVacationEndDate = new System.Windows.Forms.Label();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.labelSearchForAnAddress = new System.Windows.Forms.Label();
+            this.textBoxSearchAddress = new System.Windows.Forms.TextBox();
+            this.labelSubscriptionName = new System.Windows.Forms.Label();
+            this.labelSubscriptionPrice = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.labelPeriod = new System.Windows.Forms.Label();
+            this.comboBoxPeriod = new System.Windows.Forms.ComboBox();
             this.groupBoxCustomerInformation.SuspendLayout();
             this.groupBoxSubscriptions.SuspendLayout();
             this.groupBoxVacations.SuspendLayout();
@@ -124,9 +128,13 @@
             // 
             // groupBoxSubscriptions
             // 
-            this.groupBoxSubscriptions.Controls.Add(this.comboBoxSubscriptions);
+            this.groupBoxSubscriptions.Controls.Add(this.comboBoxPeriod);
+            this.groupBoxSubscriptions.Controls.Add(this.labelPeriod);
+            this.groupBoxSubscriptions.Controls.Add(this.textBox2);
+            this.groupBoxSubscriptions.Controls.Add(this.textBox1);
+            this.groupBoxSubscriptions.Controls.Add(this.labelSubscriptionPrice);
+            this.groupBoxSubscriptions.Controls.Add(this.labelSubscriptionName);
             this.groupBoxSubscriptions.Controls.Add(this.buttonAddSubscription);
-            this.groupBoxSubscriptions.Controls.Add(this.labelSavedSubscription);
             this.groupBoxSubscriptions.Location = new System.Drawing.Point(330, 63);
             this.groupBoxSubscriptions.Name = "groupBoxSubscriptions";
             this.groupBoxSubscriptions.Size = new System.Drawing.Size(297, 157);
@@ -134,31 +142,14 @@
             this.groupBoxSubscriptions.TabStop = false;
             this.groupBoxSubscriptions.Text = "Subscriptions";
             // 
-            // comboBoxSubscriptions
-            // 
-            this.comboBoxSubscriptions.FormattingEnabled = true;
-            this.comboBoxSubscriptions.Location = new System.Drawing.Point(87, 51);
-            this.comboBoxSubscriptions.Name = "comboBoxSubscriptions";
-            this.comboBoxSubscriptions.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxSubscriptions.TabIndex = 2;
-            // 
             // buttonAddSubscription
             // 
-            this.buttonAddSubscription.Location = new System.Drawing.Point(206, 128);
+            this.buttonAddSubscription.Location = new System.Drawing.Point(216, 128);
             this.buttonAddSubscription.Name = "buttonAddSubscription";
             this.buttonAddSubscription.Size = new System.Drawing.Size(75, 23);
             this.buttonAddSubscription.TabIndex = 1;
             this.buttonAddSubscription.Text = "Add";
             this.buttonAddSubscription.UseVisualStyleBackColor = true;
-            // 
-            // labelSavedSubscription
-            // 
-            this.labelSavedSubscription.AutoSize = true;
-            this.labelSavedSubscription.Location = new System.Drawing.Point(95, 16);
-            this.labelSavedSubscription.Name = "labelSavedSubscription";
-            this.labelSavedSubscription.Size = new System.Drawing.Size(104, 13);
-            this.labelSavedSubscription.TabIndex = 0;
-            this.labelSavedSubscription.Text = "Saved Subscriptions";
             // 
             // listView1
             // 
@@ -205,30 +196,43 @@
             this.groupBoxVacations.TabStop = false;
             this.groupBoxVacations.Text = "Vacations";
             // 
-            // textBoxSearchAddress
+            // labelVacationEndDate
             // 
-            this.textBoxSearchAddress.Location = new System.Drawing.Point(20, 41);
-            this.textBoxSearchAddress.Name = "textBoxSearchAddress";
-            this.textBoxSearchAddress.Size = new System.Drawing.Size(152, 20);
-            this.textBoxSearchAddress.TabIndex = 0;
+            this.labelVacationEndDate.AutoSize = true;
+            this.labelVacationEndDate.Location = new System.Drawing.Point(224, 345);
+            this.labelVacationEndDate.Name = "labelVacationEndDate";
+            this.labelVacationEndDate.Size = new System.Drawing.Size(97, 13);
+            this.labelVacationEndDate.TabIndex = 8;
+            this.labelVacationEndDate.Text = "Vacation End Date";
             // 
-            // labelSearchForAnAddress
+            // labelVacationStartDate
             // 
-            this.labelSearchForAnAddress.AutoSize = true;
-            this.labelSearchForAnAddress.Location = new System.Drawing.Point(35, 16);
-            this.labelSearchForAnAddress.Name = "labelSearchForAnAddress";
-            this.labelSearchForAnAddress.Size = new System.Drawing.Size(116, 13);
-            this.labelSearchForAnAddress.TabIndex = 1;
-            this.labelSearchForAnAddress.Text = "Search For An Address";
+            this.labelVacationStartDate.AutoSize = true;
+            this.labelVacationStartDate.Location = new System.Drawing.Point(221, 287);
+            this.labelVacationStartDate.Name = "labelVacationStartDate";
+            this.labelVacationStartDate.Size = new System.Drawing.Size(100, 13);
+            this.labelVacationStartDate.TabIndex = 7;
+            this.labelVacationStartDate.Text = "Vacation Start Date";
             // 
-            // buttonSearch
+            // textBoxVacationEndDate
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(54, 67);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
-            this.buttonSearch.TabIndex = 2;
-            this.buttonSearch.Text = "Search";
-            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.textBoxVacationEndDate.Location = new System.Drawing.Point(327, 342);
+            this.textBoxVacationEndDate.Name = "textBoxVacationEndDate";
+            this.textBoxVacationEndDate.Size = new System.Drawing.Size(171, 20);
+            this.textBoxVacationEndDate.TabIndex = 6;
+            // 
+            // textBoxVacationStartDate
+            // 
+            this.textBoxVacationStartDate.Location = new System.Drawing.Point(327, 284);
+            this.textBoxVacationStartDate.Name = "textBoxVacationStartDate";
+            this.textBoxVacationStartDate.Size = new System.Drawing.Size(171, 20);
+            this.textBoxVacationStartDate.TabIndex = 5;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(246, 67);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 4;
             // 
             // listView2
             // 
@@ -245,43 +249,79 @@
             // 
             this.columnHeaderMatchingAddress.Text = "Matching Address";
             // 
-            // monthCalendar1
+            // buttonSearch
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(246, 67);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 4;
+            this.buttonSearch.Location = new System.Drawing.Point(54, 67);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearch.TabIndex = 2;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = true;
             // 
-            // textBoxVacationStartDate
+            // labelSearchForAnAddress
             // 
-            this.textBoxVacationStartDate.Location = new System.Drawing.Point(327, 284);
-            this.textBoxVacationStartDate.Name = "textBoxVacationStartDate";
-            this.textBoxVacationStartDate.Size = new System.Drawing.Size(171, 20);
-            this.textBoxVacationStartDate.TabIndex = 5;
+            this.labelSearchForAnAddress.AutoSize = true;
+            this.labelSearchForAnAddress.Location = new System.Drawing.Point(35, 16);
+            this.labelSearchForAnAddress.Name = "labelSearchForAnAddress";
+            this.labelSearchForAnAddress.Size = new System.Drawing.Size(116, 13);
+            this.labelSearchForAnAddress.TabIndex = 1;
+            this.labelSearchForAnAddress.Text = "Search For An Address";
             // 
-            // textBoxVacationEndDate
+            // textBoxSearchAddress
             // 
-            this.textBoxVacationEndDate.Location = new System.Drawing.Point(327, 342);
-            this.textBoxVacationEndDate.Name = "textBoxVacationEndDate";
-            this.textBoxVacationEndDate.Size = new System.Drawing.Size(171, 20);
-            this.textBoxVacationEndDate.TabIndex = 6;
+            this.textBoxSearchAddress.Location = new System.Drawing.Point(20, 41);
+            this.textBoxSearchAddress.Name = "textBoxSearchAddress";
+            this.textBoxSearchAddress.Size = new System.Drawing.Size(152, 20);
+            this.textBoxSearchAddress.TabIndex = 0;
             // 
-            // labelVacationStartDate
+            // labelSubscriptionName
             // 
-            this.labelVacationStartDate.AutoSize = true;
-            this.labelVacationStartDate.Location = new System.Drawing.Point(221, 287);
-            this.labelVacationStartDate.Name = "labelVacationStartDate";
-            this.labelVacationStartDate.Size = new System.Drawing.Size(100, 13);
-            this.labelVacationStartDate.TabIndex = 7;
-            this.labelVacationStartDate.Text = "Vacation Start Date";
+            this.labelSubscriptionName.AutoSize = true;
+            this.labelSubscriptionName.Location = new System.Drawing.Point(24, 41);
+            this.labelSubscriptionName.Name = "labelSubscriptionName";
+            this.labelSubscriptionName.Size = new System.Drawing.Size(35, 13);
+            this.labelSubscriptionName.TabIndex = 3;
+            this.labelSubscriptionName.Text = "Name";
             // 
-            // labelVacationEndDate
+            // labelSubscriptionPrice
             // 
-            this.labelVacationEndDate.AutoSize = true;
-            this.labelVacationEndDate.Location = new System.Drawing.Point(224, 345);
-            this.labelVacationEndDate.Name = "labelVacationEndDate";
-            this.labelVacationEndDate.Size = new System.Drawing.Size(97, 13);
-            this.labelVacationEndDate.TabIndex = 8;
-            this.labelVacationEndDate.Text = "Vacation End Date";
+            this.labelSubscriptionPrice.AutoSize = true;
+            this.labelSubscriptionPrice.Location = new System.Drawing.Point(28, 84);
+            this.labelSubscriptionPrice.Name = "labelSubscriptionPrice";
+            this.labelSubscriptionPrice.Size = new System.Drawing.Size(31, 13);
+            this.labelSubscriptionPrice.TabIndex = 4;
+            this.labelSubscriptionPrice.Text = "Price";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(65, 38);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(127, 20);
+            this.textBox1.TabIndex = 5;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(65, 77);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(127, 20);
+            this.textBox2.TabIndex = 6;
+            // 
+            // labelPeriod
+            // 
+            this.labelPeriod.AutoSize = true;
+            this.labelPeriod.Location = new System.Drawing.Point(23, 113);
+            this.labelPeriod.Name = "labelPeriod";
+            this.labelPeriod.Size = new System.Drawing.Size(37, 13);
+            this.labelPeriod.TabIndex = 7;
+            this.labelPeriod.Text = "Period";
+            // 
+            // comboBoxPeriod
+            // 
+            this.comboBoxPeriod.FormattingEnabled = true;
+            this.comboBoxPeriod.Location = new System.Drawing.Point(65, 110);
+            this.comboBoxPeriod.Name = "comboBoxPeriod";
+            this.comboBoxPeriod.Size = new System.Drawing.Size(127, 21);
+            this.comboBoxPeriod.TabIndex = 8;
             // 
             // Form_EditCustomerForm
             // 
@@ -317,9 +357,7 @@
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.GroupBox groupBoxSubscriptions;
-        private System.Windows.Forms.ComboBox comboBoxSubscriptions;
         private System.Windows.Forms.Button buttonAddSubscription;
-        private System.Windows.Forms.Label labelSavedSubscription;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label labelCustomerSubscriptions;
         private System.Windows.Forms.Button buttonOK;
@@ -334,5 +372,11 @@
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Label labelSearchForAnAddress;
         private System.Windows.Forms.TextBox textBoxSearchAddress;
+        private System.Windows.Forms.ComboBox comboBoxPeriod;
+        private System.Windows.Forms.Label labelPeriod;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label labelSubscriptionPrice;
+        private System.Windows.Forms.Label labelSubscriptionName;
     }
 }
