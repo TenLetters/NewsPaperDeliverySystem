@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NewsPaperDeliverySystem.CustomerInfo
 {
-        public class Subscription
+        public abstract class Subscription
     {
         String name;
         Double price;
@@ -67,15 +67,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         // Purpose:
         // convert to subscription into a writeable string
         // name##price
-        public String getSubcriptionWriteFormat()
-        {
-            String result = "Subscription##";
-            result += this.name;
-            result += "##";
-            result += this.price.ToString();
-
-            return result;
-        }
+        public abstract String getSubcriptionWriteFormat();
 
         // Purpose:
         //  Fills this subscription from a string read in

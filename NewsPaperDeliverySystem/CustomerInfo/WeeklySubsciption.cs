@@ -12,6 +12,11 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         public WeeklySubsciption(String name, Double price) : base(name, price)
         {
         }
+        
+        // returns an empty WeeklySubscription
+        public WeeklySubsciption() : base()
+        {
+        }
 
         //Purpose:
         //  Should this be delivered today?
@@ -28,7 +33,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         // Purpose:
         // convert to subscription into a writeable string
         // name##price##period
-        public new String getSubcriptionWriteFormat()
+        public override String getSubcriptionWriteFormat()
         {
             String result = "Subscription##";
             result += base.getName();

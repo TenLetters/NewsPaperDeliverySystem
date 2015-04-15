@@ -53,9 +53,26 @@ namespace NewsPaperDeliverySystem.IOModule
                             // loop through all subscriptions
                             while(line.StartsWith("Subscription"))
                             {
-                                Subscription subscription = new Subscription();
+                                // parse the line
+                                string[] splitLine = line.Split(new string[] { "##" }, StringSplitOptions.None);
+
+                                Subscription subscription;
+
+                                // check which type of subscription we are reading
                                 // fill the subscrption with the proper information and typing
-                                subscription = subscription.fillFromFileString(line);
+                                if (splitLine[3].Equals("Daily"))
+                                {
+                                    subscription = new DailySubscription().fillFromFileString(line);
+                                }
+                                else if (splitLine[3].Equals("Weekly"))
+                                {
+                                    subscription = new WeeklySubsciption().fillFromFileString(line);
+                                }
+                                else
+                                {
+                                    subscription = new MonthlySubscription().fillFromFileString(line);
+                                }
+
                                 // store the subscription into the current customer
                                 currentCustomer.addSubscription(subscription);
                             }
@@ -67,8 +84,26 @@ namespace NewsPaperDeliverySystem.IOModule
                             // loop through all items in the back log
                             while(line.StartsWith("Back Log"))
                             {
-                                Subscription subscription = new Subscription();
-                                subscription.fillFromFileString(line);
+                                // parse the line
+                                string[] splitLine = line.Split(new string[] { "##" }, StringSplitOptions.None);
+
+                                Subscription subscription;
+
+                                // check which type of subscription we are reading
+                                // fill the subscrption with the proper information and typing
+                                if (splitLine[3].Equals("Daily"))
+                                {
+                                    subscription = new DailySubscription().fillFromFileString(line);
+                                }
+                                else if (splitLine[3].Equals("Weekly"))
+                                {
+                                    subscription = new WeeklySubsciption().fillFromFileString(line);
+                                }
+                                else
+                                {
+                                    subscription = new MonthlySubscription().fillFromFileString(line);
+                                }
+
                                 // store the subscription into the back log of the customer
                                 currentCustomer.addToBackLog(subscription);
                             }
