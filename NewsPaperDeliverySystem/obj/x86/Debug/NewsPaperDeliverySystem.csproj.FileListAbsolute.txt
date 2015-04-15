@@ -6,3 +6,14 @@ C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliveryS
 C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.csproj.GenerateResource.Cache
 C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.exe
 C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.pdb
+C:\Users\Alex Ciaramella\Visual Studio Projects\Newspaper Delivery System\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.exe
+C:\Users\Alex Ciaramella\Visual Studio Projects\Newspaper Delivery System\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.pdb
+C:\Users\Alex Ciaramella\Visual Studio Projects\Newspaper Delivery System\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.csprojResolveAssemblyReference.cache
+C:\Users\Alex Ciaramella\Visual Studio Projects\Newspaper Delivery System\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.Forms.Form_AddCustomerForm.resources
+C:\Users\Alex Ciaramella\Visual Studio Projects\Newspaper Delivery System\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.Forms.Form_DeliveryLogForm.resources
+C:\Users\Alex Ciaramella\Visual Studio Projects\Newspaper Delivery System\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.Forms.Form_EditCustomerForm.resources
+C:\Users\Alex Ciaramella\Visual Studio Projects\Newspaper Delivery System\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.Form1.resources
+C:\Users\Alex Ciaramella\Visual Studio Projects\Newspaper Delivery System\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.Properties.Resources.resources
+C:\Users\Alex Ciaramella\Visual Studio Projects\Newspaper Delivery System\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.csproj.GenerateResource.Cache
+C:\Users\Alex Ciaramella\Visual Studio Projects\Newspaper Delivery System\NewsPaperDeliverySystem\bin\Debug\NewsPaperDeliverySystem.exe
+C:\Users\Alex Ciaramella\Visual Studio Projects\Newspaper Delivery System\NewsPaperDeliverySystem\bin\Debug\NewsPaperDeliverySystem.pdb

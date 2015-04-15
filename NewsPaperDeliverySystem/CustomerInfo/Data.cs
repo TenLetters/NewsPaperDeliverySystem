@@ -12,7 +12,15 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         // default consctructor for a Data object
         public Data(List<Customer> customers)
         {
-            customerList = customers;
+            // if we are passed no customers, create a new empty list instead
+            if (customers != null)
+            {
+                customerList = customers;
+            }
+            else
+            {
+                customerList = new List<Customer>();
+            }
         }
 
         // returns the list of customers
@@ -35,7 +43,19 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         // returns the list of customers who have deliveries today
         public List<Customer> getTodaysDeliveries()
         {
-            return null;
+            List<Customer> result = new List<Customer>();
+
+            // loop through all of the customers
+            foreach(Customer customer in customerList)
+            {
+                // check if the customer has atleast one delivery for today
+                if(customer.getTodaysDeliveries().getSubscriptions().Count > 0)
+                {
+                    result.Add(customer);
+                }
+            }
+
+            return result;
         }
     }
 

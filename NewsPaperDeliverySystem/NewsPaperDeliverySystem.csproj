@@ -53,6 +53,24 @@
     <Compile Include="CustomerInfo\MonthlySubscription.cs" />
     <Compile Include="CustomerInfo\Subscription.cs" />
     <Compile Include="CustomerInfo\WeeklySubsciption.cs" />
+    <Compile Include="Forms\Form_AddCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_AddCustomerForm.Designer.cs">
+      <DependentUpon>Form_AddCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_DeliveryLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_DeliveryLogForm.Designer.cs">
+      <DependentUpon>Form_DeliveryLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_EditCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_EditCustomerForm.Designer.cs">
+      <DependentUpon>Form_EditCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form_MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +80,15 @@
     <Compile Include="IOModule\IOModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Form_AddCustomerForm.resx">
+      <DependentUpon>Form_AddCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_DeliveryLogForm.resx">
+      <DependentUpon>Form_DeliveryLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_EditCustomerForm.resx">
+      <DependentUpon>Form_EditCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_MainForm.resx">
       <DependentUpon>Form_MainForm.cs</DependentUpon>
     </EmbeddedResource>

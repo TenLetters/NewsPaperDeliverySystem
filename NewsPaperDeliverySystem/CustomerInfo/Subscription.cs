@@ -5,15 +5,22 @@ using System.Text;
 
 namespace NewsPaperDeliverySystem.CustomerInfo
 {
-    abstract class Subscription
+        class Subscription
     {
         String name;
         Double price;
 
+        // default constructor for a subscription
         public Subscription(String name, Double price)
         {
             this.name  = name;
             this.price = price;
+        }
+
+        // create a blank subscription
+        public Subscription()
+        {
+
         }
 
         //Purpose:
@@ -48,6 +55,36 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             this.price = price;
             return true;
         }
+
+        //Purpose:
+        //  Should this be delivered today?
+        //  Will return true if this is the day it is delivered on, false otherwise
+        public Boolean deliverToday(DateTime date)
+        {
+            return true;
+        }
         
+        // Purpose:
+        // convert to subscription into a writeable string
+        // name##price
+        public String getSubcriptionWrieFormat()
+        {
+            String result = "Subscription##";
+            result += this.name;
+            result += "##";
+            result += this.price.ToString();
+
+            return result;
+        }
+
+        // Purpose:
+        //  Fills this subscription from a string read in
+        public void fillFromFileString(String line)
+        {
+            string[] splitLine = line.Split(new string[] { "##" }, StringSplitOptions.None);
+
+            this.name = splitLine[1];
+            this.price = double.Parse(splitLine[2]);
+        }
     }
 }

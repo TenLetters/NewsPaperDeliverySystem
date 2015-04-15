@@ -37,7 +37,7 @@ namespace NewsPaperDeliverySystem
             TreeNode tempNode;
 
             // create a new node for each customer
-            foreach (Customer customer in customers)
+            foreach (Customer customer in data.getTodaysDeliveries())
             {
                 // set the text at the head of the node as the customer's name
                 tempNode = new TreeNode(customer.getName());

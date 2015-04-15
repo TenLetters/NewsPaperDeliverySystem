@@ -7,10 +7,16 @@ namespace NewsPaperDeliverySystem.CustomerInfo
 {
     class MonthlySubscription : Subscription
     {
+        // passes the parameters to the super class
+        public MonthlySubscription(String name, Double price) : base(name, price)
+        {
+
+        }
+
         //Purpose:
         //  Should this be delivered today?
         //  Will return true if this is the day it is delivered on, false otherwise
-        public Boolean deliverToday(DateTime date)
+        public new Boolean deliverToday(DateTime date)
         {
             // set up a date time to find the first friday
             DateTime firstFriday = new DateTime(date.Year, date.Month, 1);

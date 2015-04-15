@@ -94,7 +94,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         //  EX: 20 Dickinson street, Glassboro NJ, 08028
         public String toString()
         {
-            return street + ", " + city + " " + state + ", " + zipCode; 
+            return street + "," + city + "," + state + "," + zipCode; 
         }
     }
 }

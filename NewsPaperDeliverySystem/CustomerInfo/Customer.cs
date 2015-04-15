@@ -12,6 +12,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         String name;
         Address address;
         List<Subscription> subscriptions;
+        List<Subscription> backlog;
         int id;
         DateTime vacationStart;
         DateTime vacationEnd;
@@ -22,6 +23,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             name = "None";
             address = new Address();
             subscriptions = new List<Subscription>();
+            backlog = new List<Subscription>();
             id = 000;
             vacationStart = new DateTime();
             vacationEnd = new DateTime();
@@ -37,6 +39,27 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             this.id = id;
             this.vacationStart = vacationStart;
             this.vacationEnd = vacationEnd;
+        }
+
+        // Purpose:
+        //  copies the fields from the first customer then replaces the list of subscriptions with the given list
+        public Customer(Customer customer, List<Subscription> subscriptions)
+        {
+            // check if customer is on vacation
+            if (DateTime.Now > customer.vacationStart && DateTime.Now < customer.vacationEnd)
+            {
+                // copy fields
+                this.name = customer.name;
+                this.address = customer.address;
+                this.id = customer.id;
+                // copy subscriptions from given list
+                this.subscriptions = subscriptions;
+            }
+            // if customer is on vacation, add items to backlog
+            else
+            {
+                this.backlog.AddRange(customer.getSubscriptions());
+            }
         }
 
         //Purpose:
@@ -153,5 +176,111 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             this.vacationEnd = vacationEnd;
         }
 
+        // Purpose:
+        // Returns a copy of this customer object with only the subscriptions that need to be deliviered today
+        public Customer getTodaysDeliveries()
+        {
+            List<Subscription> result = new List<Subscription>();
+
+            // loop through each subscription
+            foreach(Subscription subscription in subscriptions)
+            {
+                // if the subscription needs to be delivered today
+                if(subscription.deliverToday(DateTime.Now))
+                {
+                    result.Add(subscription);
+                }
+            }
+
+            // return a new customer with only the subscriptions that need to be delivered today 
+            Customer resultingCustomer = new Customer(this, subscriptions);
+
+            // if our customer has no subscriptions, they must be on vacation so add their backlog to ours
+            if(resultingCustomer.getSubscriptions().Count == 0)
+            {
+                this.backlog.AddRange(resultingCustomer.getBackLog());
+            }
+            // return the customer
+            return resultingCustomer;
+        }
+
+        // Purpose:
+        //  Returns the back log
+        public List<Subscription> getBackLog()
+        {
+            return this.backlog;
+        }
+
+        // Purpose:
+        //  creates a string with the proper format to be written out
+        // name##address##id##VacationStart##VacationEnd##
+        public List<String> getCustomerWriteFormat()
+        {
+            // set up a variable to store out final list of strings to write out
+            List<String> listResult = new List<String>();
+            // set up a variable to store our string
+            String result = "";
+            // set up a delimeter
+            String delimeter = "##";
+
+            // save the class data
+            result += this.name;
+            result += delimeter;
+            result += this.address.toString();
+            result += delimeter;
+            result += id.ToString();
+            result += delimeter;
+            result += this.vacationStart.ToBinary().ToString();
+            result += delimeter;
+            result += this.vacationEnd.ToBinary().ToString();
+
+            // say we are starting a new customer object
+            listResult.Add("Begin Customer");
+            // add the name, address, id, and vacation information
+            listResult.Add(result);
+
+            // save all of the subscriptions
+            listResult.Add("Subscriptions");
+            foreach(Subscription subscription in subscriptions)
+            {
+                listResult.Add(subscription.getSubcriptionWrieFormat());
+            }
+
+            // save all of the subscriptions in the back log
+            listResult.Add("Back Log");
+            foreach(Subscription subscription in backlog)
+            {
+                listResult.Add(subscription.getSubcriptionWrieFormat());
+            }
+
+            // say we are done with this customer
+            listResult.Add("End Customer");
+
+            // return the writeable info
+            return listResult;
+        }
+
+        // Purpose:
+        //  Add an item to this customers back log
+        public Boolean addToBackLog(Subscription subscription)
+        {
+            this.backlog.Add(subscription);
+            return true;
+        }
+
+        // Purpose:
+        // Parses a string and fill up the attributes in this class
+        public void fillFromFileString(String line)
+        {
+            string[] splitLine = line.Split(new string[] { "##" }, StringSplitOptions.None);
+
+            this.name = splitLine[0];
+            // split up the address line
+            string[] addressLine = splitLine[1].Split(',');
+            this.address = new Address(addressLine[0], addressLine[1], addressLine[2], addressLine[3]);
+            this.id = int.Parse(splitLine[2]);
+            this.vacationStart = DateTime.FromBinary(long.Parse(splitLine[3]));
+            this.vacationEnd = DateTime.FromBinary(long.Parse(splitLine[4]));
+        }
     }
 }
