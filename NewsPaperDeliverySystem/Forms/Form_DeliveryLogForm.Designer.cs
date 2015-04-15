@@ -32,6 +32,8 @@
             this.listViewDeliveriesOn = new System.Windows.Forms.ListView();
             this.labelDeliveriesOn = new System.Windows.Forms.Label();
             this.buttonOK = new System.Windows.Forms.Button();
+            this.columnHeaderAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderItemDelivered = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // monthCalendar
@@ -42,12 +44,16 @@
             // 
             // listViewDeliveriesOn
             // 
+            this.listViewDeliveriesOn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderAddress,
+            this.columnHeaderItemDelivered});
             this.listViewDeliveriesOn.GridLines = true;
             this.listViewDeliveriesOn.Location = new System.Drawing.Point(435, 68);
             this.listViewDeliveriesOn.Name = "listViewDeliveriesOn";
             this.listViewDeliveriesOn.Size = new System.Drawing.Size(665, 520);
             this.listViewDeliveriesOn.TabIndex = 1;
             this.listViewDeliveriesOn.UseCompatibleStateImageBehavior = false;
+            this.listViewDeliveriesOn.View = System.Windows.Forms.View.Details;
             // 
             // labelDeliveriesOn
             // 
@@ -66,6 +72,16 @@
             this.buttonOK.TabIndex = 3;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
+            // 
+            // columnHeaderAddress
+            // 
+            this.columnHeaderAddress.Text = "Address";
+            this.columnHeaderAddress.Width = 296;
+            // 
+            // columnHeaderItemDelivered
+            // 
+            this.columnHeaderItemDelivered.Text = "Item Delivered";
+            this.columnHeaderItemDelivered.Width = 333;
             // 
             // Form_DeliveryLogForm
             // 
@@ -89,5 +105,7 @@
         private System.Windows.Forms.ListView listViewDeliveriesOn;
         private System.Windows.Forms.Label labelDeliveriesOn;
         private System.Windows.Forms.Button buttonOK;
+        private System.Windows.Forms.ColumnHeader columnHeaderAddress;
+        private System.Windows.Forms.ColumnHeader columnHeaderItemDelivered;
     }
 }

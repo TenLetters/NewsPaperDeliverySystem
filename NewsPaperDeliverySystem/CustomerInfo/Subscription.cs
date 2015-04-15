@@ -67,7 +67,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         // Purpose:
         // convert to subscription into a writeable string
         // name##price
-        public String getSubcriptionWrieFormat()
+        public String getSubcriptionWriteFormat()
         {
             String result = "Subscription##";
             result += this.name;
@@ -79,12 +79,25 @@ namespace NewsPaperDeliverySystem.CustomerInfo
 
         // Purpose:
         //  Fills this subscription from a string read in
-        public void fillFromFileString(String line)
+        public Subscription fillFromFileString(String line)
         {
             string[] splitLine = line.Split(new string[] { "##" }, StringSplitOptions.None);
 
-            this.name = splitLine[1];
-            this.price = double.Parse(splitLine[2]);
+            // check if the subscription is daily
+            if (splitLine[3].Equals("Daily"))
+            {
+                return new DailySubscription(splitLine[1], double.Parse(splitLine[2]));
+            }
+            // check if the subscription is monthly
+            else if (splitLine[3].Equals("Monthly"))
+            {
+                return new MonthlySubscription(splitLine[1], double.Parse(splitLine[2]));
+            }
+            // otherwise it must be weekly
+            else
+            {
+                return new WeeklySubsciption(splitLine[1], double.Parse(splitLine[2]));
+            }
         }
     }
 }

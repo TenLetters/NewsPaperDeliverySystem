@@ -36,6 +36,12 @@
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.groupBoxSubscriptions = new System.Windows.Forms.GroupBox();
+            this.comboBoxPeriod = new System.Windows.Forms.ComboBox();
+            this.labelPeriod = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelSubscriptionPrice = new System.Windows.Forms.Label();
+            this.labelSubscriptionName = new System.Windows.Forms.Label();
             this.buttonAddSubscription = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.labelCustomerSubscriptions = new System.Windows.Forms.Label();
@@ -51,12 +57,9 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             this.labelSearchForAnAddress = new System.Windows.Forms.Label();
             this.textBoxSearchAddress = new System.Windows.Forms.TextBox();
-            this.labelSubscriptionName = new System.Windows.Forms.Label();
-            this.labelSubscriptionPrice = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.labelPeriod = new System.Windows.Forms.Label();
-            this.comboBoxPeriod = new System.Windows.Forms.ComboBox();
+            this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderPeriod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBoxCustomerInformation.SuspendLayout();
             this.groupBoxSubscriptions.SuspendLayout();
             this.groupBoxVacations.SuspendLayout();
@@ -142,6 +145,55 @@
             this.groupBoxSubscriptions.TabStop = false;
             this.groupBoxSubscriptions.Text = "Subscriptions";
             // 
+            // comboBoxPeriod
+            // 
+            this.comboBoxPeriod.FormattingEnabled = true;
+            this.comboBoxPeriod.Location = new System.Drawing.Point(65, 110);
+            this.comboBoxPeriod.Name = "comboBoxPeriod";
+            this.comboBoxPeriod.Size = new System.Drawing.Size(127, 21);
+            this.comboBoxPeriod.TabIndex = 8;
+            // 
+            // labelPeriod
+            // 
+            this.labelPeriod.AutoSize = true;
+            this.labelPeriod.Location = new System.Drawing.Point(23, 113);
+            this.labelPeriod.Name = "labelPeriod";
+            this.labelPeriod.Size = new System.Drawing.Size(37, 13);
+            this.labelPeriod.TabIndex = 7;
+            this.labelPeriod.Text = "Period";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(65, 77);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(127, 20);
+            this.textBox2.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(65, 38);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(127, 20);
+            this.textBox1.TabIndex = 5;
+            // 
+            // labelSubscriptionPrice
+            // 
+            this.labelSubscriptionPrice.AutoSize = true;
+            this.labelSubscriptionPrice.Location = new System.Drawing.Point(28, 84);
+            this.labelSubscriptionPrice.Name = "labelSubscriptionPrice";
+            this.labelSubscriptionPrice.Size = new System.Drawing.Size(31, 13);
+            this.labelSubscriptionPrice.TabIndex = 4;
+            this.labelSubscriptionPrice.Text = "Price";
+            // 
+            // labelSubscriptionName
+            // 
+            this.labelSubscriptionName.AutoSize = true;
+            this.labelSubscriptionName.Location = new System.Drawing.Point(24, 41);
+            this.labelSubscriptionName.Name = "labelSubscriptionName";
+            this.labelSubscriptionName.Size = new System.Drawing.Size(35, 13);
+            this.labelSubscriptionName.TabIndex = 3;
+            this.labelSubscriptionName.Text = "Name";
+            // 
             // buttonAddSubscription
             // 
             this.buttonAddSubscription.Location = new System.Drawing.Point(216, 128);
@@ -153,12 +205,17 @@
             // 
             // listView1
             // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderName,
+            this.columnHeaderPrice,
+            this.columnHeaderPeriod});
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(75, 265);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(591, 276);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // labelCustomerSubscriptions
             // 
@@ -274,54 +331,20 @@
             this.textBoxSearchAddress.Size = new System.Drawing.Size(152, 20);
             this.textBoxSearchAddress.TabIndex = 0;
             // 
-            // labelSubscriptionName
+            // columnHeaderName
             // 
-            this.labelSubscriptionName.AutoSize = true;
-            this.labelSubscriptionName.Location = new System.Drawing.Point(24, 41);
-            this.labelSubscriptionName.Name = "labelSubscriptionName";
-            this.labelSubscriptionName.Size = new System.Drawing.Size(35, 13);
-            this.labelSubscriptionName.TabIndex = 3;
-            this.labelSubscriptionName.Text = "Name";
+            this.columnHeaderName.Text = "Name";
+            this.columnHeaderName.Width = 119;
             // 
-            // labelSubscriptionPrice
+            // columnHeaderPrice
             // 
-            this.labelSubscriptionPrice.AutoSize = true;
-            this.labelSubscriptionPrice.Location = new System.Drawing.Point(28, 84);
-            this.labelSubscriptionPrice.Name = "labelSubscriptionPrice";
-            this.labelSubscriptionPrice.Size = new System.Drawing.Size(31, 13);
-            this.labelSubscriptionPrice.TabIndex = 4;
-            this.labelSubscriptionPrice.Text = "Price";
+            this.columnHeaderPrice.Text = "Price";
+            this.columnHeaderPrice.Width = 139;
             // 
-            // textBox1
+            // columnHeaderPeriod
             // 
-            this.textBox1.Location = new System.Drawing.Point(65, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 20);
-            this.textBox1.TabIndex = 5;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(65, 77);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(127, 20);
-            this.textBox2.TabIndex = 6;
-            // 
-            // labelPeriod
-            // 
-            this.labelPeriod.AutoSize = true;
-            this.labelPeriod.Location = new System.Drawing.Point(23, 113);
-            this.labelPeriod.Name = "labelPeriod";
-            this.labelPeriod.Size = new System.Drawing.Size(37, 13);
-            this.labelPeriod.TabIndex = 7;
-            this.labelPeriod.Text = "Period";
-            // 
-            // comboBoxPeriod
-            // 
-            this.comboBoxPeriod.FormattingEnabled = true;
-            this.comboBoxPeriod.Location = new System.Drawing.Point(65, 110);
-            this.comboBoxPeriod.Name = "comboBoxPeriod";
-            this.comboBoxPeriod.Size = new System.Drawing.Size(127, 21);
-            this.comboBoxPeriod.TabIndex = 8;
+            this.columnHeaderPeriod.Text = "Period";
+            this.columnHeaderPeriod.Width = 153;
             // 
             // Form_EditCustomerForm
             // 
@@ -378,5 +401,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label labelSubscriptionPrice;
         private System.Windows.Forms.Label labelSubscriptionName;
+        private System.Windows.Forms.ColumnHeader columnHeaderName;
+        private System.Windows.Forms.ColumnHeader columnHeaderPrice;
+        private System.Windows.Forms.ColumnHeader columnHeaderPeriod;
     }
 }

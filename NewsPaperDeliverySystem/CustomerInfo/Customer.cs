@@ -245,14 +245,14 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             listResult.Add("Subscriptions");
             foreach(Subscription subscription in subscriptions)
             {
-                listResult.Add(subscription.getSubcriptionWrieFormat());
+                listResult.Add(subscription.getSubcriptionWriteFormat());
             }
 
             // save all of the subscriptions in the back log
             listResult.Add("Back Log");
             foreach(Subscription subscription in backlog)
             {
-                listResult.Add(subscription.getSubcriptionWrieFormat());
+                listResult.Add(subscription.getSubcriptionWriteFormat());
             }
 
             // say we are done with this customer

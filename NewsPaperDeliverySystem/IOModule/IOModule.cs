@@ -54,7 +54,8 @@ namespace NewsPaperDeliverySystem.IOModule
                             while(line.StartsWith("Subscription"))
                             {
                                 Subscription subscription = new Subscription();
-                                subscription.fillFromFileString(line);
+                                // fill the subscrption with the proper information and typing
+                                subscription = subscription.fillFromFileString(line);
                                 // store the subscription into the current customer
                                 currentCustomer.addSubscription(subscription);
                             }

@@ -47,7 +47,20 @@ namespace NewsPaperDeliverySystem.Forms
             foreach (ListViewItem lvi in this.listViewSubscriptions.Items)
             {
                 // add the subscription to the list
-                result.Add(new Subscription(lvi.SubItems[0].Text, Double.Parse(lvi.SubItems[1].Text)));
+
+                // check for which period the subscription should be delivered on
+                if(lvi.SubItems[2].Text.Equals("Daily"))
+                {
+                    result.Add(new DailySubscription(lvi.SubItems[0].Text, Double.Parse(lvi.SubItems[1].Text)));
+                }
+                else if(lvi.SubItems[2].Text.Equals("Weekly"))
+                {
+                    result.Add(new WeeklySubsciption(lvi.SubItems[0].Text, Double.Parse(lvi.SubItems[1].Text)));
+                }
+                else
+                {
+                    result.Add(new MonthlySubscription(lvi.SubItems[0].Text, Double.Parse(lvi.SubItems[1].Text)));
+                }
             }
 
             return result;

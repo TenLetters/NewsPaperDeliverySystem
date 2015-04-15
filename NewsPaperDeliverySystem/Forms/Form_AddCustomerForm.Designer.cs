@@ -47,13 +47,13 @@
             this.labelCity = new System.Windows.Forms.Label();
             this.labelZip = new System.Windows.Forms.Label();
             this.groupBoxAddSubscriptions = new System.Windows.Forms.GroupBox();
+            this.comboBoxPeriod = new System.Windows.Forms.ComboBox();
             this.textBoxSubscriptionName = new System.Windows.Forms.TextBox();
             this.textBoxSubscriptionPrice = new System.Windows.Forms.TextBox();
             this.labelSubscriptionPeriod = new System.Windows.Forms.Label();
             this.labelSubscriptionPrice = new System.Windows.Forms.Label();
             this.labelSubscriptionName = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.comboBoxPeriod = new System.Windows.Forms.ComboBox();
             this.groupBoxCustomerInformation.SuspendLayout();
             this.groupBoxAddSubscriptions.SuspendLayout();
             this.SuspendLayout();
@@ -107,14 +107,17 @@
             // columnHeaderTitle
             // 
             this.columnHeaderTitle.Text = "Title";
+            this.columnHeaderTitle.Width = 119;
             // 
             // columnHeaderCost
             // 
             this.columnHeaderCost.Text = "Cost";
+            this.columnHeaderCost.Width = 85;
             // 
             // columnHeaderDeliveryPeriod
             // 
             this.columnHeaderDeliveryPeriod.Text = "Delivery Period";
+            this.columnHeaderDeliveryPeriod.Width = 138;
             // 
             // labelSubscriptions
             // 
@@ -228,6 +231,14 @@
             this.groupBoxAddSubscriptions.TabStop = false;
             this.groupBoxAddSubscriptions.Text = "Add Subscriptions";
             // 
+            // comboBoxPeriod
+            // 
+            this.comboBoxPeriod.FormattingEnabled = true;
+            this.comboBoxPeriod.Location = new System.Drawing.Point(114, 87);
+            this.comboBoxPeriod.Name = "comboBoxPeriod";
+            this.comboBoxPeriod.Size = new System.Drawing.Size(161, 21);
+            this.comboBoxPeriod.TabIndex = 15;
+            // 
             // textBoxSubscriptionName
             // 
             this.textBoxSubscriptionName.Location = new System.Drawing.Point(114, 20);
@@ -278,14 +289,6 @@
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
-            // comboBoxPeriod
-            // 
-            this.comboBoxPeriod.FormattingEnabled = true;
-            this.comboBoxPeriod.Location = new System.Drawing.Point(114, 87);
-            this.comboBoxPeriod.Name = "comboBoxPeriod";
-            this.comboBoxPeriod.Size = new System.Drawing.Size(161, 21);
-            this.comboBoxPeriod.TabIndex = 15;
             // 
             // Form_AddCustomerForm
             // 

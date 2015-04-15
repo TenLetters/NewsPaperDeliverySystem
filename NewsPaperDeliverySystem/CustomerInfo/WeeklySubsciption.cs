@@ -25,5 +25,20 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             return false;
         }
 
+        // Purpose:
+        // convert to subscription into a writeable string
+        // name##price##period
+        public new String getSubcriptionWriteFormat()
+        {
+            String result = "Subscription##";
+            result += base.getName();
+            result += "##";
+            result += base.getPrice().ToString();
+            result += "##";
+            result += "Weekly";
+
+            return result;
+        }
+
     }
 }
