@@ -52,9 +52,30 @@ namespace NewsPaperDeliverySystem
             }
         }
 
+        // writes the customer data into a file
         private void buttonSaveCustomerInformation_Click(object sender, EventArgs e)
         {
             this.IOModule.writeCustomer(data.getCustomerList());
+        }
+
+        // opens up the AddCustomerForm
+        private void buttonAddNewCustomer_Click(object sender, EventArgs e)
+        {
+            NewsPaperDeliverySystem.Forms.Form_AddCustomerForm addCustomerForm = new Forms.Form_AddCustomerForm();
+            addCustomerForm.ShowDialog();
+
+            // the user clicked OK
+            if (addCustomerForm.DialogResult == DialogResult.OK)
+            {
+                // add the created customer to our data
+                data.addCustomer(addCustomerForm.getCustomer());
+            }
+            // the user clicked cancel
+            else if (addCustomerForm.DialogResult == DialogResult.Cancel)
+            {
+                // do nothing
+            }
+
         }
     }
 }

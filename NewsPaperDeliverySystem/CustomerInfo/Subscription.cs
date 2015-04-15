@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NewsPaperDeliverySystem.CustomerInfo
 {
-        class Subscription
+        public class Subscription
     {
         String name;
         Double price;

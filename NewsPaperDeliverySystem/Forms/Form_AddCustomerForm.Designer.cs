@@ -32,7 +32,7 @@
             this.labelStreet = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxStreet = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewSubscriptions = new System.Windows.Forms.ListView();
             this.columnHeaderTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderDeliveryPeriod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -40,19 +40,20 @@
             this.buttonAddSubscription = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.groupBoxCustomerInformation = new System.Windows.Forms.GroupBox();
-            this.groupBoxAddSubscriptions = new System.Windows.Forms.GroupBox();
-            this.labelSubscriptionName = new System.Windows.Forms.Label();
-            this.labelSubscriptionPrice = new System.Windows.Forms.Label();
-            this.labelSubscriptionPeriod = new System.Windows.Forms.Label();
-            this.textBoxSubscriptionPeriod = new System.Windows.Forms.TextBox();
-            this.textBoxSubscriptionPrice = new System.Windows.Forms.TextBox();
-            this.textBoxSubscriptionName = new System.Windows.Forms.TextBox();
-            this.labelZip = new System.Windows.Forms.Label();
-            this.labelCity = new System.Windows.Forms.Label();
-            this.labelState = new System.Windows.Forms.Label();
-            this.textBoxZip = new System.Windows.Forms.TextBox();
-            this.textBoxCity = new System.Windows.Forms.TextBox();
             this.textBoxState = new System.Windows.Forms.TextBox();
+            this.textBoxCity = new System.Windows.Forms.TextBox();
+            this.textBoxZip = new System.Windows.Forms.TextBox();
+            this.labelState = new System.Windows.Forms.Label();
+            this.labelCity = new System.Windows.Forms.Label();
+            this.labelZip = new System.Windows.Forms.Label();
+            this.groupBoxAddSubscriptions = new System.Windows.Forms.GroupBox();
+            this.textBoxSubscriptionName = new System.Windows.Forms.TextBox();
+            this.textBoxSubscriptionPrice = new System.Windows.Forms.TextBox();
+            this.labelSubscriptionPeriod = new System.Windows.Forms.Label();
+            this.labelSubscriptionPrice = new System.Windows.Forms.Label();
+            this.labelSubscriptionName = new System.Windows.Forms.Label();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.comboBoxPeriod = new System.Windows.Forms.ComboBox();
             this.groupBoxCustomerInformation.SuspendLayout();
             this.groupBoxAddSubscriptions.SuspendLayout();
             this.SuspendLayout();
@@ -89,18 +90,19 @@
             this.textBoxStreet.Size = new System.Drawing.Size(200, 20);
             this.textBoxStreet.TabIndex = 3;
             // 
-            // listView1
+            // listViewSubscriptions
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewSubscriptions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderTitle,
             this.columnHeaderCost,
             this.columnHeaderDeliveryPeriod});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(12, 258);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(814, 298);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listViewSubscriptions.GridLines = true;
+            this.listViewSubscriptions.Location = new System.Drawing.Point(12, 258);
+            this.listViewSubscriptions.Name = "listViewSubscriptions";
+            this.listViewSubscriptions.Size = new System.Drawing.Size(693, 298);
+            this.listViewSubscriptions.TabIndex = 4;
+            this.listViewSubscriptions.UseCompatibleStateImageBehavior = false;
+            this.listViewSubscriptions.View = System.Windows.Forms.View.Details;
             // 
             // columnHeaderTitle
             // 
@@ -131,15 +133,17 @@
             this.buttonAddSubscription.TabIndex = 8;
             this.buttonAddSubscription.Text = "Add Subscription";
             this.buttonAddSubscription.UseVisualStyleBackColor = true;
+            this.buttonAddSubscription.Click += new System.EventHandler(this.buttonAddSubscription_Click);
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(832, 533);
+            this.buttonOK.Location = new System.Drawing.Point(742, 522);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 9;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // groupBoxCustomerInformation
             // 
@@ -160,11 +164,59 @@
             this.groupBoxCustomerInformation.TabStop = false;
             this.groupBoxCustomerInformation.Text = "Customer Information";
             // 
+            // textBoxState
+            // 
+            this.textBoxState.Location = new System.Drawing.Point(167, 147);
+            this.textBoxState.Name = "textBoxState";
+            this.textBoxState.Size = new System.Drawing.Size(202, 20);
+            this.textBoxState.TabIndex = 9;
+            // 
+            // textBoxCity
+            // 
+            this.textBoxCity.Location = new System.Drawing.Point(169, 120);
+            this.textBoxCity.Name = "textBoxCity";
+            this.textBoxCity.Size = new System.Drawing.Size(200, 20);
+            this.textBoxCity.TabIndex = 8;
+            // 
+            // textBoxZip
+            // 
+            this.textBoxZip.Location = new System.Drawing.Point(169, 88);
+            this.textBoxZip.Name = "textBoxZip";
+            this.textBoxZip.Size = new System.Drawing.Size(200, 20);
+            this.textBoxZip.TabIndex = 7;
+            // 
+            // labelState
+            // 
+            this.labelState.AutoSize = true;
+            this.labelState.Location = new System.Drawing.Point(129, 151);
+            this.labelState.Name = "labelState";
+            this.labelState.Size = new System.Drawing.Size(32, 13);
+            this.labelState.TabIndex = 6;
+            this.labelState.Text = "State";
+            // 
+            // labelCity
+            // 
+            this.labelCity.AutoSize = true;
+            this.labelCity.Location = new System.Drawing.Point(128, 123);
+            this.labelCity.Name = "labelCity";
+            this.labelCity.Size = new System.Drawing.Size(24, 13);
+            this.labelCity.TabIndex = 5;
+            this.labelCity.Text = "City";
+            // 
+            // labelZip
+            // 
+            this.labelZip.AutoSize = true;
+            this.labelZip.Location = new System.Drawing.Point(113, 91);
+            this.labelZip.Name = "labelZip";
+            this.labelZip.Size = new System.Drawing.Size(50, 13);
+            this.labelZip.TabIndex = 4;
+            this.labelZip.Text = "Zip Code";
+            // 
             // groupBoxAddSubscriptions
             // 
+            this.groupBoxAddSubscriptions.Controls.Add(this.comboBoxPeriod);
             this.groupBoxAddSubscriptions.Controls.Add(this.textBoxSubscriptionName);
             this.groupBoxAddSubscriptions.Controls.Add(this.textBoxSubscriptionPrice);
-            this.groupBoxAddSubscriptions.Controls.Add(this.textBoxSubscriptionPeriod);
             this.groupBoxAddSubscriptions.Controls.Add(this.labelSubscriptionPeriod);
             this.groupBoxAddSubscriptions.Controls.Add(this.labelSubscriptionPrice);
             this.groupBoxAddSubscriptions.Controls.Add(this.labelSubscriptionName);
@@ -176,23 +228,19 @@
             this.groupBoxAddSubscriptions.TabStop = false;
             this.groupBoxAddSubscriptions.Text = "Add Subscriptions";
             // 
-            // labelSubscriptionName
+            // textBoxSubscriptionName
             // 
-            this.labelSubscriptionName.AutoSize = true;
-            this.labelSubscriptionName.Location = new System.Drawing.Point(55, 23);
-            this.labelSubscriptionName.Name = "labelSubscriptionName";
-            this.labelSubscriptionName.Size = new System.Drawing.Size(35, 13);
-            this.labelSubscriptionName.TabIndex = 9;
-            this.labelSubscriptionName.Text = "Name";
+            this.textBoxSubscriptionName.Location = new System.Drawing.Point(114, 20);
+            this.textBoxSubscriptionName.Name = "textBoxSubscriptionName";
+            this.textBoxSubscriptionName.Size = new System.Drawing.Size(161, 20);
+            this.textBoxSubscriptionName.TabIndex = 14;
             // 
-            // labelSubscriptionPrice
+            // textBoxSubscriptionPrice
             // 
-            this.labelSubscriptionPrice.AutoSize = true;
-            this.labelSubscriptionPrice.Location = new System.Drawing.Point(59, 58);
-            this.labelSubscriptionPrice.Name = "labelSubscriptionPrice";
-            this.labelSubscriptionPrice.Size = new System.Drawing.Size(31, 13);
-            this.labelSubscriptionPrice.TabIndex = 10;
-            this.labelSubscriptionPrice.Text = "Price";
+            this.textBoxSubscriptionPrice.Location = new System.Drawing.Point(114, 55);
+            this.textBoxSubscriptionPrice.Name = "textBoxSubscriptionPrice";
+            this.textBoxSubscriptionPrice.Size = new System.Drawing.Size(161, 20);
+            this.textBoxSubscriptionPrice.TabIndex = 13;
             // 
             // labelSubscriptionPeriod
             // 
@@ -203,85 +251,53 @@
             this.labelSubscriptionPeriod.TabIndex = 11;
             this.labelSubscriptionPeriod.Text = "Period";
             // 
-            // textBoxSubscriptionPeriod
+            // labelSubscriptionPrice
             // 
-            this.textBoxSubscriptionPeriod.Location = new System.Drawing.Point(114, 93);
-            this.textBoxSubscriptionPeriod.Name = "textBoxSubscriptionPeriod";
-            this.textBoxSubscriptionPeriod.Size = new System.Drawing.Size(161, 20);
-            this.textBoxSubscriptionPeriod.TabIndex = 12;
+            this.labelSubscriptionPrice.AutoSize = true;
+            this.labelSubscriptionPrice.Location = new System.Drawing.Point(59, 58);
+            this.labelSubscriptionPrice.Name = "labelSubscriptionPrice";
+            this.labelSubscriptionPrice.Size = new System.Drawing.Size(31, 13);
+            this.labelSubscriptionPrice.TabIndex = 10;
+            this.labelSubscriptionPrice.Text = "Price";
             // 
-            // textBoxSubscriptionPrice
+            // labelSubscriptionName
             // 
-            this.textBoxSubscriptionPrice.Location = new System.Drawing.Point(114, 55);
-            this.textBoxSubscriptionPrice.Name = "textBoxSubscriptionPrice";
-            this.textBoxSubscriptionPrice.Size = new System.Drawing.Size(161, 20);
-            this.textBoxSubscriptionPrice.TabIndex = 13;
+            this.labelSubscriptionName.AutoSize = true;
+            this.labelSubscriptionName.Location = new System.Drawing.Point(55, 23);
+            this.labelSubscriptionName.Name = "labelSubscriptionName";
+            this.labelSubscriptionName.Size = new System.Drawing.Size(35, 13);
+            this.labelSubscriptionName.TabIndex = 9;
+            this.labelSubscriptionName.Text = "Name";
             // 
-            // textBoxSubscriptionName
+            // buttonCancel
             // 
-            this.textBoxSubscriptionName.Location = new System.Drawing.Point(114, 20);
-            this.textBoxSubscriptionName.Name = "textBoxSubscriptionName";
-            this.textBoxSubscriptionName.Size = new System.Drawing.Size(161, 20);
-            this.textBoxSubscriptionName.TabIndex = 14;
+            this.buttonCancel.Location = new System.Drawing.Point(832, 522);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.TabIndex = 12;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // labelZip
+            // comboBoxPeriod
             // 
-            this.labelZip.AutoSize = true;
-            this.labelZip.Location = new System.Drawing.Point(113, 91);
-            this.labelZip.Name = "labelZip";
-            this.labelZip.Size = new System.Drawing.Size(50, 13);
-            this.labelZip.TabIndex = 4;
-            this.labelZip.Text = "Zip Code";
-            // 
-            // labelCity
-            // 
-            this.labelCity.AutoSize = true;
-            this.labelCity.Location = new System.Drawing.Point(128, 123);
-            this.labelCity.Name = "labelCity";
-            this.labelCity.Size = new System.Drawing.Size(24, 13);
-            this.labelCity.TabIndex = 5;
-            this.labelCity.Text = "City";
-            // 
-            // labelState
-            // 
-            this.labelState.AutoSize = true;
-            this.labelState.Location = new System.Drawing.Point(129, 151);
-            this.labelState.Name = "labelState";
-            this.labelState.Size = new System.Drawing.Size(32, 13);
-            this.labelState.TabIndex = 6;
-            this.labelState.Text = "State";
-            // 
-            // textBoxZip
-            // 
-            this.textBoxZip.Location = new System.Drawing.Point(169, 88);
-            this.textBoxZip.Name = "textBoxZip";
-            this.textBoxZip.Size = new System.Drawing.Size(200, 20);
-            this.textBoxZip.TabIndex = 7;
-            // 
-            // textBoxCity
-            // 
-            this.textBoxCity.Location = new System.Drawing.Point(169, 120);
-            this.textBoxCity.Name = "textBoxCity";
-            this.textBoxCity.Size = new System.Drawing.Size(200, 20);
-            this.textBoxCity.TabIndex = 8;
-            // 
-            // textBoxState
-            // 
-            this.textBoxState.Location = new System.Drawing.Point(167, 147);
-            this.textBoxState.Name = "textBoxState";
-            this.textBoxState.Size = new System.Drawing.Size(202, 20);
-            this.textBoxState.TabIndex = 9;
+            this.comboBoxPeriod.FormattingEnabled = true;
+            this.comboBoxPeriod.Location = new System.Drawing.Point(114, 87);
+            this.comboBoxPeriod.Name = "comboBoxPeriod";
+            this.comboBoxPeriod.Size = new System.Drawing.Size(161, 21);
+            this.comboBoxPeriod.TabIndex = 15;
             // 
             // Form_AddCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 568);
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.groupBoxAddSubscriptions);
             this.Controls.Add(this.groupBoxCustomerInformation);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.labelSubscriptions);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listViewSubscriptions);
             this.Name = "Form_AddCustomerForm";
             this.Text = "Add Customer";
             this.Load += new System.EventHandler(this.Form_AddCustomerForm_Load);
@@ -300,7 +316,7 @@
         private System.Windows.Forms.Label labelStreet;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TextBox textBoxStreet;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewSubscriptions;
         private System.Windows.Forms.ColumnHeader columnHeaderTitle;
         private System.Windows.Forms.ColumnHeader columnHeaderCost;
         private System.Windows.Forms.ColumnHeader columnHeaderDeliveryPeriod;
@@ -311,7 +327,6 @@
         private System.Windows.Forms.GroupBox groupBoxAddSubscriptions;
         private System.Windows.Forms.TextBox textBoxSubscriptionName;
         private System.Windows.Forms.TextBox textBoxSubscriptionPrice;
-        private System.Windows.Forms.TextBox textBoxSubscriptionPeriod;
         private System.Windows.Forms.Label labelSubscriptionPeriod;
         private System.Windows.Forms.Label labelSubscriptionPrice;
         private System.Windows.Forms.Label labelSubscriptionName;
@@ -321,5 +336,7 @@
         private System.Windows.Forms.TextBox textBoxCity;
         private System.Windows.Forms.TextBox textBoxZip;
         private System.Windows.Forms.Label labelState;
+        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.ComboBox comboBoxPeriod;
     }
 }

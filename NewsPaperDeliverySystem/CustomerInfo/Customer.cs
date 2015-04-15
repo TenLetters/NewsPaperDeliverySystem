@@ -6,7 +6,7 @@ using System.Text;
 
 namespace NewsPaperDeliverySystem.CustomerInfo
 {
-    class Customer
+    public class Customer
     {
         //customer fields
         String name;

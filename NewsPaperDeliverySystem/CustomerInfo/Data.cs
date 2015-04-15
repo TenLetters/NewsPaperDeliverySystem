@@ -23,6 +23,13 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             }
         }
 
+        // Purpose:
+        //  adds a customer to the list
+        public void addCustomer(Customer customer)
+        {
+            this.customerList.Add(customer);
+        }
+
         // returns the list of customers
         public List<Customer> getCustomerList()
         {

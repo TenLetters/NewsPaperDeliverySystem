@@ -35,10 +35,10 @@
             this.buttonViewPastDeliveryData = new System.Windows.Forms.Button();
             this.buttonCreateDriverRoute = new System.Windows.Forms.Button();
             this.groupBoxCustomerInformation = new System.Windows.Forms.GroupBox();
+            this.buttonSaveCustomerInformation = new System.Windows.Forms.Button();
             this.buttonModifySubscriptions = new System.Windows.Forms.Button();
             this.buttonModifyCustomer = new System.Windows.Forms.Button();
             this.buttonAddNewCustomer = new System.Windows.Forms.Button();
-            this.buttonSaveCustomerInformation = new System.Windows.Forms.Button();
             this.groupBoxDeliveryServices.SuspendLayout();
             this.groupBoxCustomerInformation.SuspendLayout();
             this.SuspendLayout();
@@ -110,6 +110,16 @@
             this.groupBoxCustomerInformation.TabStop = false;
             this.groupBoxCustomerInformation.Text = "Customer Information";
             // 
+            // buttonSaveCustomerInformation
+            // 
+            this.buttonSaveCustomerInformation.Location = new System.Drawing.Point(27, 107);
+            this.buttonSaveCustomerInformation.Name = "buttonSaveCustomerInformation";
+            this.buttonSaveCustomerInformation.Size = new System.Drawing.Size(156, 23);
+            this.buttonSaveCustomerInformation.TabIndex = 3;
+            this.buttonSaveCustomerInformation.Text = "Save Customer Information";
+            this.buttonSaveCustomerInformation.UseVisualStyleBackColor = true;
+            this.buttonSaveCustomerInformation.Click += new System.EventHandler(this.buttonSaveCustomerInformation_Click);
+            // 
             // buttonModifySubscriptions
             // 
             this.buttonModifySubscriptions.Location = new System.Drawing.Point(27, 78);
@@ -136,16 +146,7 @@
             this.buttonAddNewCustomer.TabIndex = 0;
             this.buttonAddNewCustomer.Text = "Add New Customer";
             this.buttonAddNewCustomer.UseVisualStyleBackColor = true;
-            // 
-            // buttonSaveCustomerInformation
-            // 
-            this.buttonSaveCustomerInformation.Location = new System.Drawing.Point(27, 107);
-            this.buttonSaveCustomerInformation.Name = "buttonSaveCustomerInformation";
-            this.buttonSaveCustomerInformation.Size = new System.Drawing.Size(156, 23);
-            this.buttonSaveCustomerInformation.TabIndex = 3;
-            this.buttonSaveCustomerInformation.Text = "Save Customer Information";
-            this.buttonSaveCustomerInformation.UseVisualStyleBackColor = true;
-            this.buttonSaveCustomerInformation.Click += new System.EventHandler(this.buttonSaveCustomerInformation_Click);
+            this.buttonAddNewCustomer.Click += new System.EventHandler(this.buttonAddNewCustomer_Click);
             // 
             // Form1
             // 
