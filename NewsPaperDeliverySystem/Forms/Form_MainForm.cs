@@ -59,6 +59,7 @@ namespace NewsPaperDeliverySystem
         }
 
         // opens up the AddCustomerForm
+        // adds a new customer object to data if the user clicks ok
         private void buttonAddNewCustomer_Click(object sender, EventArgs e)
         {
             NewsPaperDeliverySystem.Forms.Form_AddCustomerForm addCustomerForm = new Forms.Form_AddCustomerForm();
@@ -69,9 +70,35 @@ namespace NewsPaperDeliverySystem
             {
                 // add the created customer to our data
                 data.addCustomer(addCustomerForm.getCustomer());
+                // reload our tree data incase something changes
+                // clear the old data first
+                this.treeViewTodaysDeliveries.Nodes.Clear();
+                loadDataIntoTree();
             }
             // the user clicked cancel
             else if (addCustomerForm.DialogResult == DialogResult.Cancel)
+            {
+                // do nothing
+            }
+
+        }
+
+        // opens up the edit customer form
+        // modifies a customer object in data if the user clicks ok
+        private void buttonModifyCustomer_Click(object sender, EventArgs e)
+        {
+            // open up a new edit customer form
+            NewsPaperDeliverySystem.Forms.Form_EditCustomerForm editCustomerForm = new Forms.Form_EditCustomerForm(data);
+            editCustomerForm.ShowDialog();
+
+            // check if the user clicked OK
+            if (editCustomerForm.DialogResult == DialogResult.OK)
+            {
+                // reload our tree data incase something changed
+                this.treeViewTodaysDeliveries.Nodes.Clear();
+                loadDataIntoTree();
+            }
+            else if (editCustomerForm.DialogResult == DialogResult.Cancel)
             {
                 // do nothing
             }

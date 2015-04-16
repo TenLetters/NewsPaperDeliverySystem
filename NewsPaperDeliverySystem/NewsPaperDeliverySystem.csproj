@@ -52,7 +52,7 @@
     <Compile Include="CustomerInfo\Data.cs" />
     <Compile Include="CustomerInfo\MonthlySubscription.cs" />
     <Compile Include="CustomerInfo\Subscription.cs" />
-    <Compile Include="CustomerInfo\WeeklySubsciption.cs" />
+    <Compile Include="CustomerInfo\WeeklySubscription.cs" />
     <Compile Include="Forms\Form_AddCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>

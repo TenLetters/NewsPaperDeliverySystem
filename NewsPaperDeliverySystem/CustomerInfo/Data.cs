@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NewsPaperDeliverySystem.CustomerInfo
 {
-    class Data
+    public class Data
     {
         List<Customer> customerList;
         private int highestID = 0;

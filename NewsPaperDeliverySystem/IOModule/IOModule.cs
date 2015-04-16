@@ -66,7 +66,7 @@ namespace NewsPaperDeliverySystem.IOModule
                                 }
                                 else if (splitLine[3].Equals("Weekly"))
                                 {
-                                    subscription = new WeeklySubsciption().fillFromFileString(line);
+                                    subscription = new WeeklySubscription().fillFromFileString(line);
                                 }
                                 else
                                 {
@@ -100,7 +100,7 @@ namespace NewsPaperDeliverySystem.IOModule
                                 }
                                 else if (splitLine[3].Equals("Weekly"))
                                 {
-                                    subscription = new WeeklySubsciption().fillFromFileString(line);
+                                    subscription = new WeeklySubscription().fillFromFileString(line);
                                 }
                                 else
                                 {

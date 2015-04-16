@@ -70,6 +70,10 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         public abstract String getSubcriptionWriteFormat();
 
         // Purpose:
+        // return the period of this subscription
+        public abstract String getPeriod();
+
+        // Purpose:
         //  Fills this subscription from a string read in
         public Subscription fillFromFileString(String line)
         {
@@ -88,7 +92,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             // otherwise it must be weekly
             else
             {
-                return new WeeklySubsciption(splitLine[1], double.Parse(splitLine[2]));
+                return new WeeklySubscription(splitLine[1], double.Parse(splitLine[2]));
             }
         }
     }

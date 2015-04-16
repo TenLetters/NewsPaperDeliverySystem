@@ -5,16 +5,16 @@ using System.Text;
 
 namespace NewsPaperDeliverySystem.CustomerInfo
 {
-    class MonthlySubscription : Subscription
+    class WeeklySubscription : Subscription
     {
+
         // passes the parameters to the super class
-        public MonthlySubscription(String name, Double price) : base(name, price)
+        public WeeklySubscription(String name, Double price) : base(name, price)
         {
-
         }
-
-        // returns a new MonthlySubscription
-        public MonthlySubscription() : base()
+        
+        // returns an empty WeeklySubscription
+        public WeeklySubscription() : base()
         {
         }
 
@@ -23,19 +23,10 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         //  Will return true if this is the day it is delivered on, false otherwise
         public new Boolean deliverToday(DateTime date)
         {
-            // set up a date time to find the first friday
-            DateTime firstFriday = new DateTime(date.Year, date.Month, 1);
-
-            // loop through the days until the temporary date is set to friday
-            while (firstFriday.DayOfWeek != DayOfWeek.Friday)
-                firstFriday = firstFriday.AddDays(1);
-
-            // check if today is the first friday
-            if (date.Day == firstFriday.Day)
+            if(date.DayOfWeek == DayOfWeek.Friday)
             {
                 return true;
             }
-
             return false;
         }
 
@@ -49,7 +40,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             result += "##";
             result += base.getPrice().ToString();
             result += "##";
-            result += "Monthly";
+            result += "Weekly";
 
             return result;
         }
@@ -58,7 +49,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         // return the period of this subscription
         public override String getPeriod()
         {
-            return "Monthly";
+            return "Weekly";
         }
     }
 }

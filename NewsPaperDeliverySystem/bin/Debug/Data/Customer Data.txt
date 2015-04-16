@@ -1,11 +1,12 @@
 Begin Customer
-nikc##fjk,jk,jk,kj##1##0##0
+Nick Jonas##112 Harbor Lane,Glassboro,New Jersey,02028##1##0##0
 Subscriptions
 Subscription##fa##1##Daily
+Subscription##Vogue##12##Weekly
 Back Log
 End Customer
 Begin Customer
-jonas##j,k,kl,j##2##0##0
+jonas##j,kl,j,k##2##0##0
 Subscriptions
 Subscription##fff##12##Weekly
 Back Log

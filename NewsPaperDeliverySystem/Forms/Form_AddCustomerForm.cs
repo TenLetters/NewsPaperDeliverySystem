@@ -55,7 +55,7 @@ namespace NewsPaperDeliverySystem.Forms
                 }
                 else if(lvi.SubItems[2].Text.Equals("Weekly"))
                 {
-                    result.Add(new WeeklySubsciption(lvi.SubItems[0].Text, Double.Parse(lvi.SubItems[1].Text)));
+                    result.Add(new WeeklySubscription(lvi.SubItems[0].Text, Double.Parse(lvi.SubItems[1].Text)));
                 }
                 else
                 {
@@ -137,16 +137,28 @@ namespace NewsPaperDeliverySystem.Forms
         {
             try
             {
+                String price = this.textBoxSubscriptionPrice.Text;
+
                 // verify that the user entered a proper value for price
-                Double.Parse(this.textBoxSubscriptionPrice.Text);
+                Double.Parse(price);
+
+                // format the price string for the user if they did not add cents 
+                if (!price.Contains("."))
+                {
+                    price += ".00";
+                }
                 
                 // create a list view item with the fields of the subscription entered
                 ListViewItem lvi = new ListViewItem(this.textBoxSubscriptionName.Text);
-                lvi.SubItems.Add(this.textBoxSubscriptionPrice.Text);
+                lvi.SubItems.Add(price);
                 lvi.SubItems.Add(this.comboBoxPeriod.Text);
 
                 // add the list view item to the list view
                 this.listViewSubscriptions.Items.Add(lvi);
+
+                // clear out the text boxes for the user
+                this.textBoxSubscriptionName.Clear();
+                this.textBoxSubscriptionPrice.Clear();
             }
             catch (Exception ex)
             {

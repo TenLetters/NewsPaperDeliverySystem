@@ -57,6 +57,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             {
                 // customer is on vacation, add to back log
                 this.backlog.AddRange(customer.getSubscriptions());
+                this.subscriptions = new List<Subscription>();
             }
             // if customer is not on vacation, add to list of subscriptions
             else
@@ -143,6 +144,13 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         public Boolean removeSubscription(Subscription subscriptionToBeRemoved)
         {
             return this.subscriptions.Remove(subscriptionToBeRemoved);
+        }
+
+        // Purpose:
+        //  clears the list of subscriptions from this customer
+        public void clearSubscriptions()
+        {
+            this.subscriptions.Clear();
         }
 
         //Purpose;
@@ -270,6 +278,9 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         {
             this.id = id;
         }
+
+        // Purpose
+        //  
 
         // Purpose:
         //  Add an item to this customers back log

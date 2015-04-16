@@ -41,5 +41,12 @@ namespace NewsPaperDeliverySystem.CustomerInfo
 
             return result;
         }
+
+        // Purpose:
+        // return the period of this subscription
+        public override String getPeriod()
+        {
+            return "Daily";
+        }
     }
 }
