@@ -46,21 +46,23 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         //  copies the fields from the first customer then replaces the list of subscriptions with the given list
         public Customer(Customer customer, List<Subscription> subscriptions)
         {
+            // copy fields
+            this.name = customer.name;
+            this.address = customer.address;
+            this.id = customer.id;
+            this.backlog = customer.getBackLog();
+
             // check if customer is on vacation
             if (DateTime.Now > customer.vacationStart && DateTime.Now < customer.vacationEnd)
             {
-                // copy fields
-                this.name = customer.name;
-                this.address = customer.address;
-                this.id = customer.id;
-                this.backlog = new List<Subscription>();
-                // copy subscriptions from given list
-                this.subscriptions = subscriptions;
+                // customer is on vacation, add to back log
+                this.backlog.AddRange(customer.getSubscriptions());
             }
-            // if customer is on vacation, add items to backlog
+            // if customer is not on vacation, add to list of subscriptions
             else
             {
-                this.backlog.AddRange(customer.getSubscriptions());
+                // copy subscriptions from given list
+                this.subscriptions = subscriptions;
             }
         }
 
@@ -260,6 +262,13 @@ namespace NewsPaperDeliverySystem.CustomerInfo
 
             // return the writeable info
             return listResult;
+        }
+
+        // Purpose:
+        //  change the ID of this customer
+        public void setID(int id)
+        {
+            this.id = id;
         }
 
         // Purpose:

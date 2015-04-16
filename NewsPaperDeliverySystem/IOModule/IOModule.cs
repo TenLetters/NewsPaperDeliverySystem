@@ -25,12 +25,12 @@ namespace NewsPaperDeliverySystem.IOModule
         public List<Customer> loadCustomers()
         {
             String line;
+            List<Customer> customers = new List<Customer>();
             try
             {
                 // read the customer file
                 using(StreamReader reader = new StreamReader(customerDataFilePath + customerFileName))
                 {
-                    List<Customer> customers = new List<Customer>();
                     Customer currentCustomer = new Customer();
 
                     // read through the whole file
@@ -45,7 +45,7 @@ namespace NewsPaperDeliverySystem.IOModule
                             // fill the customer from the line read
                             currentCustomer.fillFromFileString(line);
                         }
-                        else if(line.Equals("Subsriptions"))
+                        if(line.Equals("Subscriptions"))
                         {
                             // read the next line
                             line = reader.ReadLine();
@@ -75,9 +75,12 @@ namespace NewsPaperDeliverySystem.IOModule
 
                                 // store the subscription into the current customer
                                 currentCustomer.addSubscription(subscription);
+
+                                // advance to the next line
+                                line = reader.ReadLine();
                             }
                         }
-                        else if(line.Equals("Back Log"))
+                        if(line.Equals("Back Log"))
                         {
                             // read the next line
                             line = reader.ReadLine();
@@ -108,7 +111,7 @@ namespace NewsPaperDeliverySystem.IOModule
                                 currentCustomer.addToBackLog(subscription);
                             }
                         }
-                        else if(line.Equals("End Customer"))
+                        if(line.Equals("End Customer"))
                         {
                             // save the customer as is to the list
                             customers.Add(currentCustomer);
@@ -120,7 +123,9 @@ namespace NewsPaperDeliverySystem.IOModule
             {
                 MessageBox.Show("Could not load customer data", "File not found exception");
             }
-            return null;
+
+            // return the list we made
+            return customers;
         }
 
         

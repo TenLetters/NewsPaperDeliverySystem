@@ -8,6 +8,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
     class Data
     {
         List<Customer> customerList;
+        private int highestID = 0;
 
         // default consctructor for a Data object
         public Data(List<Customer> customers)
@@ -15,6 +16,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             // if we are passed no customers, create a new empty list instead
             if (customers != null)
             {
+                highestID = checkID(customers);
                 customerList = customers;
             }
             else
@@ -24,9 +26,34 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         }
 
         // Purpose:
+        //  returns the highest id number found in the list of customers
+        private int checkID(List<Customer> customers)
+        {
+            int highest = 0;
+
+            // loop through each customer, checking their id number
+            foreach (Customer customer in customers)
+            {
+                // if theirs is higher than the max, change the max to it
+                if (customer.getID() > highestID)
+                {
+                    highest = customer.getID();
+                }
+            }
+
+            return highest;
+
+        }
+
+        // Purpose:
         //  adds a customer to the list
         public void addCustomer(Customer customer)
         {
+            // increment highest id for the new customer
+            highestID += 1;
+            // add the proper id to this new customer
+            customer.setID(highestID);
+            // add the customer to the list of customers
             this.customerList.Add(customer);
         }
 

@@ -1,0 +1,12 @@
+Begin Customer
+nikc##fjk,jk,jk,kj##1##0##0
+Subscriptions
+Subscription##fa##1##Daily
+Back Log
+End Customer
+Begin Customer
+jonas##j,k,kl,j##2##0##0
+Subscriptions
+Subscription##fff##12##Weekly
+Back Log
+End Customer
