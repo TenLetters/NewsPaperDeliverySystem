@@ -104,5 +104,12 @@ namespace NewsPaperDeliverySystem
             }
 
         }
+
+        // Purpose: 
+        //  opens up the form to view the past deliveries made during the software's use
+        private void buttonViewPastDeliveryData_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

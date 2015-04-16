@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
-            this.listViewDeliveriesOn = new System.Windows.Forms.ListView();
             this.labelDeliveriesOn = new System.Windows.Forms.Label();
             this.buttonOK = new System.Windows.Forms.Button();
-            this.columnHeaderAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderItemDelivered = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.labelSelectADate = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // monthCalendar
@@ -41,24 +40,12 @@
             this.monthCalendar.Location = new System.Drawing.Point(79, 236);
             this.monthCalendar.Name = "monthCalendar";
             this.monthCalendar.TabIndex = 0;
-            // 
-            // listViewDeliveriesOn
-            // 
-            this.listViewDeliveriesOn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderAddress,
-            this.columnHeaderItemDelivered});
-            this.listViewDeliveriesOn.GridLines = true;
-            this.listViewDeliveriesOn.Location = new System.Drawing.Point(435, 68);
-            this.listViewDeliveriesOn.Name = "listViewDeliveriesOn";
-            this.listViewDeliveriesOn.Size = new System.Drawing.Size(665, 520);
-            this.listViewDeliveriesOn.TabIndex = 1;
-            this.listViewDeliveriesOn.UseCompatibleStateImageBehavior = false;
-            this.listViewDeliveriesOn.View = System.Windows.Forms.View.Details;
+            this.monthCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateSelected);
             // 
             // labelDeliveriesOn
             // 
             this.labelDeliveriesOn.AutoSize = true;
-            this.labelDeliveriesOn.Location = new System.Drawing.Point(732, 52);
+            this.labelDeliveriesOn.Location = new System.Drawing.Point(685, 67);
             this.labelDeliveriesOn.Name = "labelDeliveriesOn";
             this.labelDeliveriesOn.Size = new System.Drawing.Size(73, 13);
             this.labelDeliveriesOn.TabIndex = 2;
@@ -66,31 +53,39 @@
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(1025, 694);
+            this.buttonOK.Location = new System.Drawing.Point(1025, 669);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 3;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
-            // columnHeaderAddress
+            // treeView1
             // 
-            this.columnHeaderAddress.Text = "Address";
-            this.columnHeaderAddress.Width = 296;
+            this.treeView1.Location = new System.Drawing.Point(353, 83);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(747, 563);
+            this.treeView1.TabIndex = 4;
             // 
-            // columnHeaderItemDelivered
+            // labelSelectADate
             // 
-            this.columnHeaderItemDelivered.Text = "Item Delivered";
-            this.columnHeaderItemDelivered.Width = 333;
+            this.labelSelectADate.AutoSize = true;
+            this.labelSelectADate.Location = new System.Drawing.Point(156, 214);
+            this.labelSelectADate.Name = "labelSelectADate";
+            this.labelSelectADate.Size = new System.Drawing.Size(70, 13);
+            this.labelSelectADate.TabIndex = 5;
+            this.labelSelectADate.Text = "Select a date";
             // 
             // Form_DeliveryLogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1112, 729);
+            this.ClientSize = new System.Drawing.Size(1112, 704);
+            this.Controls.Add(this.labelSelectADate);
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.labelDeliveriesOn);
-            this.Controls.Add(this.listViewDeliveriesOn);
             this.Controls.Add(this.monthCalendar);
             this.Name = "Form_DeliveryLogForm";
             this.Text = "Delivery History Log";
@@ -102,10 +97,9 @@
         #endregion
 
         private System.Windows.Forms.MonthCalendar monthCalendar;
-        private System.Windows.Forms.ListView listViewDeliveriesOn;
         private System.Windows.Forms.Label labelDeliveriesOn;
         private System.Windows.Forms.Button buttonOK;
-        private System.Windows.Forms.ColumnHeader columnHeaderAddress;
-        private System.Windows.Forms.ColumnHeader columnHeaderItemDelivered;
+        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Label labelSelectADate;
     }
 }

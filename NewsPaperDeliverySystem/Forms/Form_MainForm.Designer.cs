@@ -86,6 +86,7 @@
             this.buttonViewPastDeliveryData.TabIndex = 1;
             this.buttonViewPastDeliveryData.Text = "View Past Delivery Data";
             this.buttonViewPastDeliveryData.UseVisualStyleBackColor = true;
+            this.buttonViewPastDeliveryData.Click += new System.EventHandler(this.buttonViewPastDeliveryData_Click);
             // 
             // buttonCreateDriverRoute
             // 

@@ -12,6 +12,7 @@ namespace NewsPaperDeliverySystem.IOModule
     {
         private string customerDataFilePath = "Data\\";
         private string customerFileName = "Customer Data.txt";
+        private string fileExtension = ".txt";
 
         // default constructor for an IOModule object
         public IOModule()
@@ -154,5 +155,41 @@ namespace NewsPaperDeliverySystem.IOModule
             }
         }
 
+        // Purpose:
+        //  writes out all of the delivery log information into a text file
+        //  located in the default location
+        public void writeDeliveryLog()
+        {
+        }
+
+        // Purpose:
+        //  reads the text file with the delivery log data which
+        //  corresponds to the given date string and returns all of the data
+        //  if the file cannot be found, return an empty list
+        public List<String> loadDeliveryLog(String date)
+        {
+            List<String> result = new List<String>();
+
+            try
+            {
+                // get the name of the file the data would be in if it exists
+                string filename = date + fileExtension;
+
+                // set up a stream reader to read the data file 
+                using (StreamReader reader = new StreamReader(filename))
+                {
+
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                // Return a List with one string
+                // which states that there is no saved data for the given date
+                result.Add("There is no saved data for: " + date);
+                return result;
+            }
+        }
     }
 }
