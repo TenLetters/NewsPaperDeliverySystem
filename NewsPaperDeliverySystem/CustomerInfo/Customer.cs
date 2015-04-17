@@ -16,6 +16,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         int id;
         DateTime vacationStart;
         DateTime vacationEnd;
+        DateTime backlogEmptiedDate;
 
         //default constructor
         public Customer()
@@ -27,6 +28,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             id = 000;
             vacationStart = new DateTime();
             vacationEnd = new DateTime();
+            backlogEmptiedDate = new DateTime();
         }
 
         //Purpose:
@@ -188,6 +190,21 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             this.vacationEnd = vacationEnd;
         }
 
+         // Purpose:
+         //  Calculates the cost of all of the subscriptions owned by this customer
+         private double calculateBillPrice()
+         {
+             double result = 0;
+
+             // loop through all subscriptions
+             foreach (Subscription subscription in subscriptions)
+             {
+                 result += subscription.getPrice();
+             }
+
+             return result;
+         }
+
         // Purpose:
         // Returns a copy of this customer object with only the subscriptions that need to be deliviered today
         public Customer getTodaysDeliveries()
@@ -204,8 +221,42 @@ namespace NewsPaperDeliverySystem.CustomerInfo
                 }
             }
 
+            // check if the user is done vacation
+            if (DateTime.Now > vacationEnd)
+            {
+                // the back log was delivered yesterday or earlier, clear it
+                // if it was emptied today, then do not delete it
+                // in case the software needs to be rerun today and this function
+                // is called more than once today
+                if (backlogEmptiedDate.Date < DateTime.Now.Date)
+                {
+                    backlog.Clear();
+                }
+                else
+                {
+                // check if they have any items on back log that we have been holding for them
+                    if (backlog.Count > 0)
+                    {
+                        foreach (Subscription subscription in backlog)
+                        {
+                            // add the subscription to be delivered today
+                            result.Add(subscription);
+                        }
+                        // set the last time the backlog was emptied to now
+                        backlogEmptiedDate = DateTime.Now;
+                    }
+                }
+            }
+
+            // check if it is time for the bill
+            // send out all bills on the 28th of each month
+            if (DateTime.Now.Day == 28)
+            {
+                result.Add(new MonthlySubscription("Bill", calculateBillPrice()));
+            }
+
             // return a new customer with only the subscriptions that need to be delivered today 
-            Customer resultingCustomer = new Customer(this, subscriptions);
+            Customer resultingCustomer = new Customer(this, result);
 
             // if our customer has no subscriptions, they must be on vacation so add their backlog to ours
             if(resultingCustomer.getSubscriptions().Count == 0)
@@ -279,9 +330,6 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             this.id = id;
         }
 
-        // Purpose
-        //  
-
         // Purpose:
         //  Add an item to this customers back log
         public Boolean addToBackLog(Subscription subscription)
@@ -299,7 +347,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             this.name = splitLine[0];
             // split up the address line
             string[] addressLine = splitLine[1].Split(',');
-            this.address = new Address(addressLine[0], addressLine[1], addressLine[2], addressLine[3]);
+            this.address = new Address(addressLine[0], addressLine[2], addressLine[3], addressLine[1]);
             this.id = int.Parse(splitLine[2]);
             this.vacationStart = DateTime.FromBinary(long.Parse(splitLine[3]));
             this.vacationEnd = DateTime.FromBinary(long.Parse(splitLine[4]));

@@ -311,5 +311,22 @@ namespace NewsPaperDeliverySystem.Forms
             // return the list of subscriptions
             return subscriptions;
         }
+
+        // Purpose:
+        // set the dialog result of this form to cancel so none of the data is update
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
+
+        // Purpose:
+        //  removes all checked list view items from the list view
+        private void buttonRemoveSubscription_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem lvi in this.listViewSubscriptions.CheckedItems)
+            {
+                this.listViewSubscriptions.Items.Remove(lvi);
+            }
+        }
     }
 }

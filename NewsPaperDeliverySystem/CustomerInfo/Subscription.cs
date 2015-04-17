@@ -59,10 +59,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         //Purpose:
         //  Should this be delivered today?
         //  Will return true if this is the day it is delivered on, false otherwise
-        public Boolean deliverToday(DateTime date)
-        {
-            return true;
-        }
+        public abstract Boolean deliverToday(DateTime date);
         
         // Purpose:
         // convert to subscription into a writeable string

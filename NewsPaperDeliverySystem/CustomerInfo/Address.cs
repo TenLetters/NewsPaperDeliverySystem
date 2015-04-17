@@ -96,5 +96,59 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         {
             return street + "," + city + "," + state + "," + zipCode; 
         }
+
+        //Purpose:
+        //  returns the map formatting for google maps to locate this address with
+        public String getMapString()
+        {
+            String result = "";
+            result += parseString(street);
+            result += ",+";
+            result += parseString(city);
+            result += ",+";
+            result += parseString(state);
+            result += "+";
+            result += zipCode;
+
+            return result;
+
+        }
+
+        //Purpose:
+        //  turns the given string into a useable string for google maps
+        private String parseString(String item)
+        {
+            // split on white space
+            String[] splitString = item.Split(null);
+            List<String> splitList = new List<String>();
+            splitList.AddRange(splitString);
+
+            String result = "";
+            for (int i = 0; i < splitList.Count; i++)
+            {
+                result += splitList[i];
+                // only add the plus sign if we arent on the last element
+                if (i < splitList.Count - 1)
+                    result += "+";
+            }
+
+            return result;
+        }
+
+        //Purpose:
+        //  removes all white space from a string for google maps
+        private String condenseString(String item)
+        {
+            // split on white space
+            String[] splitString = item.Split(null);
+
+            String result = "";
+            foreach (String part in splitString)
+            {
+                result += part;
+            }
+
+            return result;
+        }
     }
 }

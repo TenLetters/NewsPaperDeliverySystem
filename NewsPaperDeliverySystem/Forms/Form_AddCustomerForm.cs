@@ -19,15 +19,68 @@ namespace NewsPaperDeliverySystem.Forms
         public Form_AddCustomerForm()
         {
             InitializeComponent();
-            // add our combo box choices
+            // add our combo box choices for the subscription periods
             this.comboBoxPeriod.Items.Add("Daily");
             this.comboBoxPeriod.Items.Add("Weekly");
             this.comboBoxPeriod.Items.Add("Monthly");
+            // add our combo box choices for the stats
+            loadStateComboBox();
         }
 
-        private void Form_AddCustomerForm_Load(object sender, EventArgs e)
+        // Purpose:
+        //  loads all of the stats into the stateComboBox
+        private void loadStateComboBox()
         {
-
+            this.comboBoxState.Items.Add("Alabama");
+            this.comboBoxState.Items.Add("Alaska");
+            this.comboBoxState.Items.Add("Arizona");
+            this.comboBoxState.Items.Add("Arkansas");
+            this.comboBoxState.Items.Add("California");
+            this.comboBoxState.Items.Add("Colorado");
+            this.comboBoxState.Items.Add("Connecticut");
+            this.comboBoxState.Items.Add("Delaware");
+            this.comboBoxState.Items.Add("Florida");
+            this.comboBoxState.Items.Add("Georgia");
+            this.comboBoxState.Items.Add("Hawaii");
+            this.comboBoxState.Items.Add("Iadaho");
+            this.comboBoxState.Items.Add("Illinois");
+            this.comboBoxState.Items.Add("Indiana");
+            this.comboBoxState.Items.Add("Iowa");
+            this.comboBoxState.Items.Add("Kansas");
+            this.comboBoxState.Items.Add("Kentucky");
+            this.comboBoxState.Items.Add("Louisiana");
+            this.comboBoxState.Items.Add("Maine");
+            this.comboBoxState.Items.Add("Maryland");
+            this.comboBoxState.Items.Add("Massachusetts");
+            this.comboBoxState.Items.Add("Michigan");
+            this.comboBoxState.Items.Add("Minnesota");
+            this.comboBoxState.Items.Add("Mississippi");
+            this.comboBoxState.Items.Add("Missouri");
+            this.comboBoxState.Items.Add("Montana");
+            this.comboBoxState.Items.Add("Nebraska");
+            this.comboBoxState.Items.Add("Nevada");
+            this.comboBoxState.Items.Add("New Hampshire");
+            this.comboBoxState.Items.Add("New Jersey");
+            this.comboBoxState.Items.Add("New Mexico");
+            this.comboBoxState.Items.Add("New York");
+            this.comboBoxState.Items.Add("North Carolina");
+            this.comboBoxState.Items.Add("North Dakota");
+            this.comboBoxState.Items.Add("Ohio");
+            this.comboBoxState.Items.Add("Oklahoma");
+            this.comboBoxState.Items.Add("Oregon");
+            this.comboBoxState.Items.Add("Pennsylvania");
+            this.comboBoxState.Items.Add("Rhode Island");
+            this.comboBoxState.Items.Add("South Carolina");
+            this.comboBoxState.Items.Add("South Dakota");
+            this.comboBoxState.Items.Add("Tennessee");
+            this.comboBoxState.Items.Add("Texas");
+            this.comboBoxState.Items.Add("Utah");
+            this.comboBoxState.Items.Add("Vermont");
+            this.comboBoxState.Items.Add("Virginia");
+            this.comboBoxState.Items.Add("Washington");
+            this.comboBoxState.Items.Add("West Virginia");
+            this.comboBoxState.Items.Add("Wisconsin");
+            this.comboBoxState.Items.Add("Wyoming");
         }
 
         // Purpose:
@@ -99,7 +152,7 @@ namespace NewsPaperDeliverySystem.Forms
                 MessageBox.Show("Please enter a city", "Data Error");
                 return;
             }
-            if (this.textBoxState.Text.Equals(""))
+            if (this.comboBoxState.Text.Equals(""))
             {
                 MessageBox.Show("Please enter a state", "Data Error");
                 return;
@@ -113,7 +166,7 @@ namespace NewsPaperDeliverySystem.Forms
                                             this.textBoxStreet.Text,
                                             this.textBoxZip.Text,
                                             this.textBoxCity.Text,
-                                            this.textBoxState.Text),
+                                            this.comboBoxState.Text),
                                         getSubscriptions(),
                                         nextID,
                                         new DateTime(),

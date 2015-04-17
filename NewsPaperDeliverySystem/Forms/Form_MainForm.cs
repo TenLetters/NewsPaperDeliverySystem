@@ -109,7 +109,25 @@ namespace NewsPaperDeliverySystem
         //  opens up the form to view the past deliveries made during the software's use
         private void buttonViewPastDeliveryData_Click(object sender, EventArgs e)
         {
+            // open up a new delivery log form
+            NewsPaperDeliverySystem.Forms.Form_DeliveryLogForm deliveryLogForm = new Forms.Form_DeliveryLogForm();
+            deliveryLogForm.ShowDialog();
+        }
 
+        // Purpose:
+        //  Opens up a new form with google maps to navigate to the addresses which need to be delivered to today
+        private void buttonCreateDriverRoute_Click(object sender, EventArgs e)
+        {
+            // open up a new map form and pass it today's deliveries
+            NewsPaperDeliverySystem.Forms.Form_MapForm mapForm = new Forms.Form_MapForm(this.data.getTodaysDeliveries());
+            mapForm.ShowDialog();
+        }
+
+        // Purpose:
+        //  save today's deliveries before we close the form for the log
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            IOModule.writeDeliveryLog(data.getTodaysDeliveries());
         }
     }
 }

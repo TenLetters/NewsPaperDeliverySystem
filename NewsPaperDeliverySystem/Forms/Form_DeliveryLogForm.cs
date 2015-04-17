@@ -18,7 +18,7 @@ namespace NewsPaperDeliverySystem.Forms
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-
+            this.DialogResult = DialogResult.OK;
         }
 
         // Purpose:
@@ -28,22 +28,57 @@ namespace NewsPaperDeliverySystem.Forms
             // get the date the user chose
             DateTime dateSelected = this.monthCalendar.SelectionStart;
 
-            // update the tree with the proper date
-            displayTree(dateSelected);
+            // update the list viewwith the proper date
+            displayData(dateSelected);
         }
 
         // Purpose:
-        //  Updates the tree with the data corresponding to the given date
-        //  leaves the tree blank if the date could not be found
-        private void displayTree(DateTime dateSelected)
+        //  Updates the list view with the data corresponding to the given date
+        //  leaves the list view blank if the date could not be found
+        private void displayData(DateTime dateSelected)
         {
+
+            // clear any old data out
+            this.listViewDeliveriesOn.Items.Clear();
+
             // format the date as a string
-            String date = dateSelected.ToString("MM/dd/yy");
+            String date = dateSelected.ToString("MM-dd-yy");
 
             // get a reference to an ioModule to read/write data
             NewsPaperDeliverySystem.IOModule.IOModule ioModule = new IOModule.IOModule();
 
-            ioModule.
+            // read in the data from the date
+            List<String> results = ioModule.loadDeliveryLog(date);
+
+            ListViewItem lvi;
+
+            // check if any data was read in
+            if (results.Count == 1)
+            {
+                // no data was read in
+                lvi = new ListViewItem(results[0]);
+
+                // add our item to the list view
+                this.listViewDeliveriesOn.Items.Add(lvi);
+
+            }
+            else
+            {
+                // loop through all strings in result
+                foreach (String line in results)
+                {
+                    // parse the line
+                    string[] splitLine = line.Split(new string[] { "##" }, StringSplitOptions.None);
+
+                    // add the data to a list view item
+                    lvi = new ListViewItem(splitLine[0]);
+                    lvi.SubItems.Add(splitLine[1]);
+
+                    // add the list view item to the list view
+                    this.listViewDeliveriesOn.Items.Add(lvi);
+                }
+            }
+
         }
     }
 }

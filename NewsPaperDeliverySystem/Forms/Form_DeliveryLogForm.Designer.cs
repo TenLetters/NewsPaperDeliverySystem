@@ -31,8 +31,10 @@
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.labelDeliveriesOn = new System.Windows.Forms.Label();
             this.buttonOK = new System.Windows.Forms.Button();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             this.labelSelectADate = new System.Windows.Forms.Label();
+            this.listViewDeliveriesOn = new System.Windows.Forms.ListView();
+            this.columnHeaderAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderItem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // monthCalendar
@@ -61,13 +63,6 @@
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(353, 83);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(747, 563);
-            this.treeView1.TabIndex = 4;
-            // 
             // labelSelectADate
             // 
             this.labelSelectADate.AutoSize = true;
@@ -77,13 +72,37 @@
             this.labelSelectADate.TabIndex = 5;
             this.labelSelectADate.Text = "Select a date";
             // 
+            // listViewDeliveriesOn
+            // 
+            this.listViewDeliveriesOn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderAddress,
+            this.columnHeaderItem});
+            this.listViewDeliveriesOn.FullRowSelect = true;
+            this.listViewDeliveriesOn.GridLines = true;
+            this.listViewDeliveriesOn.Location = new System.Drawing.Point(350, 83);
+            this.listViewDeliveriesOn.Name = "listViewDeliveriesOn";
+            this.listViewDeliveriesOn.Size = new System.Drawing.Size(750, 580);
+            this.listViewDeliveriesOn.TabIndex = 6;
+            this.listViewDeliveriesOn.UseCompatibleStateImageBehavior = false;
+            this.listViewDeliveriesOn.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeaderAddress
+            // 
+            this.columnHeaderAddress.Text = "Address";
+            this.columnHeaderAddress.Width = 323;
+            // 
+            // columnHeaderItem
+            // 
+            this.columnHeaderItem.Text = "Item Delivered";
+            this.columnHeaderItem.Width = 394;
+            // 
             // Form_DeliveryLogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 704);
+            this.Controls.Add(this.listViewDeliveriesOn);
             this.Controls.Add(this.labelSelectADate);
-            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.labelDeliveriesOn);
             this.Controls.Add(this.monthCalendar);
@@ -99,7 +118,9 @@
         private System.Windows.Forms.MonthCalendar monthCalendar;
         private System.Windows.Forms.Label labelDeliveriesOn;
         private System.Windows.Forms.Button buttonOK;
-        private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Label labelSelectADate;
+        private System.Windows.Forms.ListView listViewDeliveriesOn;
+        private System.Windows.Forms.ColumnHeader columnHeaderAddress;
+        private System.Windows.Forms.ColumnHeader columnHeaderItem;
     }
 }

@@ -148,6 +148,8 @@ namespace NewsPaperDeliverySystem.IOModule
 
                 // try writing the info to the file
                 System.IO.File.WriteAllLines(customerDataFilePath + customerFileName, lines);
+
+                MessageBox.Show("Customer data saved to " + Directory.GetCurrentDirectory().ToString() + "\\" + customerDataFilePath + customerFileName, "Save Successful");
             }
             catch (Exception ex)
             {
@@ -158,8 +160,36 @@ namespace NewsPaperDeliverySystem.IOModule
         // Purpose:
         //  writes out all of the delivery log information into a text file
         //  located in the default location
-        public void writeDeliveryLog()
+        public void writeDeliveryLog(List<Customer> customers)
         {
+            try
+            {
+                // get today's date
+                DateTime today = DateTime.Now;
+                // format the date as a string
+                String date = today.ToString("MM-dd-yy");
+
+                // store the lines to be written
+                List<String> lines = new List<String>();
+
+                // loop through all of the customers
+                foreach (Customer customer in customers)
+                {
+                    //  loop through each subscription for each customer
+                    foreach (Subscription subscription in customer.getSubscriptions())
+                    {
+                        // add the customer address and the subscription delivered to that address
+                        lines.Add(customer.getAddress().getStreet() + "##" + subscription.getName());
+                    }
+                }
+
+               // try writing the info to the file
+                System.IO.File.WriteAllLines(customerDataFilePath + date + fileExtension, lines);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error writing delivery data", "Error");
+            }
         }
 
         // Purpose:
@@ -175,12 +205,13 @@ namespace NewsPaperDeliverySystem.IOModule
                 // get the name of the file the data would be in if it exists
                 string filename = date + fileExtension;
 
-                // set up a stream reader to read the data file 
-                using (StreamReader reader = new StreamReader(filename))
-                {
+                // read the file
+                String[] lines = File.ReadAllLines(customerDataFilePath + date + fileExtension);
 
-                }
+                // add the array of lines to the array list
+                result.AddRange(lines);
 
+                // return the list of lines read
                 return result;
             }
             catch (Exception ex)

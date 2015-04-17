@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBoxCustomerInformation = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxState = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxCity = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxZip = new System.Windows.Forms.TextBox();
             this.textBoxVacationStatus = new System.Windows.Forms.TextBox();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.labelVacationStatus = new System.Windows.Forms.Label();
@@ -62,12 +68,8 @@
             this.labelSearchForAnAddress = new System.Windows.Forms.Label();
             this.textBoxSearchAddress = new System.Windows.Forms.TextBox();
             this.groupBoxFindCustomer = new System.Windows.Forms.GroupBox();
-            this.textBoxZip = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxCity = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxState = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonRemoveSubscription = new System.Windows.Forms.Button();
             this.groupBoxCustomerInformation.SuspendLayout();
             this.groupBoxSubscriptions.SuspendLayout();
             this.groupBoxVacations.SuspendLayout();
@@ -94,6 +96,55 @@
             this.groupBoxCustomerInformation.TabIndex = 0;
             this.groupBoxCustomerInformation.TabStop = false;
             this.groupBoxCustomerInformation.Text = "Customer Information";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(50, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "State";
+            // 
+            // comboBoxState
+            // 
+            this.comboBoxState.FormattingEnabled = true;
+            this.comboBoxState.Location = new System.Drawing.Point(100, 143);
+            this.comboBoxState.Name = "comboBoxState";
+            this.comboBoxState.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxState.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(50, 120);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "City";
+            // 
+            // textBoxCity
+            // 
+            this.textBoxCity.Location = new System.Drawing.Point(100, 117);
+            this.textBoxCity.Name = "textBoxCity";
+            this.textBoxCity.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCity.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Zip Code";
+            // 
+            // textBoxZip
+            // 
+            this.textBoxZip.Location = new System.Drawing.Point(100, 81);
+            this.textBoxZip.Name = "textBoxZip";
+            this.textBoxZip.Size = new System.Drawing.Size(100, 20);
+            this.textBoxZip.TabIndex = 6;
             // 
             // textBoxVacationStatus
             // 
@@ -248,6 +299,7 @@
             // 
             // listViewSubscriptions
             // 
+            this.listViewSubscriptions.CheckBoxes = true;
             this.listViewSubscriptions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderName,
             this.columnHeaderPrice,
@@ -286,7 +338,7 @@
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(1058, 547);
+            this.buttonOK.Location = new System.Drawing.Point(903, 547);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(133, 44);
             this.buttonOK.TabIndex = 4;
@@ -390,60 +442,33 @@
             this.groupBoxFindCustomer.TabStop = false;
             this.groupBoxFindCustomer.Text = "Find Customer To Edit";
             // 
-            // textBoxZip
+            // buttonCancel
             // 
-            this.textBoxZip.Location = new System.Drawing.Point(100, 81);
-            this.textBoxZip.Name = "textBoxZip";
-            this.textBoxZip.Size = new System.Drawing.Size(100, 20);
-            this.textBoxZip.TabIndex = 6;
+            this.buttonCancel.Location = new System.Drawing.Point(1058, 547);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(133, 44);
+            this.buttonCancel.TabIndex = 7;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // label1
+            // buttonRemoveSubscription
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Zip Code";
-            // 
-            // textBoxCity
-            // 
-            this.textBoxCity.Location = new System.Drawing.Point(100, 117);
-            this.textBoxCity.Name = "textBoxCity";
-            this.textBoxCity.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCity.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 120);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "City";
-            // 
-            // comboBoxState
-            // 
-            this.comboBoxState.FormattingEnabled = true;
-            this.comboBoxState.Location = new System.Drawing.Point(100, 143);
-            this.comboBoxState.Name = "comboBoxState";
-            this.comboBoxState.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxState.TabIndex = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(50, 146);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "State";
+            this.buttonRemoveSubscription.Location = new System.Drawing.Point(534, 523);
+            this.buttonRemoveSubscription.Name = "buttonRemoveSubscription";
+            this.buttonRemoveSubscription.Size = new System.Drawing.Size(123, 58);
+            this.buttonRemoveSubscription.TabIndex = 8;
+            this.buttonRemoveSubscription.Text = "Remove Checked Subscriptions";
+            this.buttonRemoveSubscription.UseVisualStyleBackColor = true;
+            this.buttonRemoveSubscription.Click += new System.EventHandler(this.buttonRemoveSubscription_Click);
             // 
             // Form_EditCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 603);
+            this.Controls.Add(this.buttonRemoveSubscription);
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.groupBoxFindCustomer);
             this.Controls.Add(this.groupBoxVacations);
             this.Controls.Add(this.buttonOK);
@@ -508,5 +533,7 @@
         private System.Windows.Forms.ComboBox comboBoxState;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxCity;
+        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Button buttonRemoveSubscription;
     }
 }

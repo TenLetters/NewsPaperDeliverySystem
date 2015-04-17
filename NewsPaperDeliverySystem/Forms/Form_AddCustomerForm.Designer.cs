@@ -40,7 +40,6 @@
             this.buttonAddSubscription = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.groupBoxCustomerInformation = new System.Windows.Forms.GroupBox();
-            this.textBoxState = new System.Windows.Forms.TextBox();
             this.textBoxCity = new System.Windows.Forms.TextBox();
             this.textBoxZip = new System.Windows.Forms.TextBox();
             this.labelState = new System.Windows.Forms.Label();
@@ -54,6 +53,7 @@
             this.labelSubscriptionPrice = new System.Windows.Forms.Label();
             this.labelSubscriptionName = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.comboBoxState = new System.Windows.Forms.ComboBox();
             this.groupBoxCustomerInformation.SuspendLayout();
             this.groupBoxAddSubscriptions.SuspendLayout();
             this.SuspendLayout();
@@ -150,7 +150,7 @@
             // 
             // groupBoxCustomerInformation
             // 
-            this.groupBoxCustomerInformation.Controls.Add(this.textBoxState);
+            this.groupBoxCustomerInformation.Controls.Add(this.comboBoxState);
             this.groupBoxCustomerInformation.Controls.Add(this.textBoxCity);
             this.groupBoxCustomerInformation.Controls.Add(this.textBoxZip);
             this.groupBoxCustomerInformation.Controls.Add(this.labelState);
@@ -166,13 +166,6 @@
             this.groupBoxCustomerInformation.TabIndex = 10;
             this.groupBoxCustomerInformation.TabStop = false;
             this.groupBoxCustomerInformation.Text = "Customer Information";
-            // 
-            // textBoxState
-            // 
-            this.textBoxState.Location = new System.Drawing.Point(167, 147);
-            this.textBoxState.Name = "textBoxState";
-            this.textBoxState.Size = new System.Drawing.Size(202, 20);
-            this.textBoxState.TabIndex = 9;
             // 
             // textBoxCity
             // 
@@ -291,6 +284,14 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
+            // comboBoxState
+            // 
+            this.comboBoxState.FormattingEnabled = true;
+            this.comboBoxState.Location = new System.Drawing.Point(168, 146);
+            this.comboBoxState.Name = "comboBoxState";
+            this.comboBoxState.Size = new System.Drawing.Size(201, 21);
+            this.comboBoxState.TabIndex = 9;
+            // 
             // Form_AddCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,7 +305,6 @@
             this.Controls.Add(this.listViewSubscriptions);
             this.Name = "Form_AddCustomerForm";
             this.Text = "Add Customer";
-            this.Load += new System.EventHandler(this.Form_AddCustomerForm_Load);
             this.groupBoxCustomerInformation.ResumeLayout(false);
             this.groupBoxCustomerInformation.PerformLayout();
             this.groupBoxAddSubscriptions.ResumeLayout(false);
@@ -336,11 +336,11 @@
         private System.Windows.Forms.Label labelSubscriptionName;
         private System.Windows.Forms.Label labelZip;
         private System.Windows.Forms.Label labelCity;
-        private System.Windows.Forms.TextBox textBoxState;
         private System.Windows.Forms.TextBox textBoxCity;
         private System.Windows.Forms.TextBox textBoxZip;
         private System.Windows.Forms.Label labelState;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.ComboBox comboBoxPeriod;
+        private System.Windows.Forms.ComboBox comboBoxState;
     }
 }

@@ -96,6 +96,7 @@
             this.buttonCreateDriverRoute.TabIndex = 0;
             this.buttonCreateDriverRoute.Text = "Create Driver Route";
             this.buttonCreateDriverRoute.UseVisualStyleBackColor = true;
+            this.buttonCreateDriverRoute.Click += new System.EventHandler(this.buttonCreateDriverRoute_Click);
             // 
             // groupBoxCustomerInformation
             // 
@@ -152,6 +153,7 @@
             this.Name = "Form1";
             this.RightToLeftLayout = true;
             this.Text = "News Paper Delivery System";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.groupBoxDeliveryServices.ResumeLayout(false);
             this.groupBoxCustomerInformation.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -20,3 +20,6 @@ C:\Users\Alex Ciaramella\Visual Studio Projects\Newspaper Delivery System\NewsPa
 C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.Forms.Form_AddCustomerForm.resources
 C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.Forms.Form_DeliveryLogForm.resources
 C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.Forms.Form_EditCustomerForm.resources
+C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.Forms.Form_MapForm.resources
+C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\bin\Debug\WebKitBrowser.dll
+C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\bin\Debug\WebKit.Interop.dll

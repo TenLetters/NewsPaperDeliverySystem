@@ -1,13 +1,19 @@
 Begin Customer
-Nick Jonas##112 Harbor Lane,Glassboro,New Jersey,02028##1##0##0
+Nick Jonas##112 Tiffany Lane,New Jersey,08234,Egg Harbor Township##1##0##0
 Subscriptions
-Subscription##fa##1##Daily
-Subscription##Vogue##12##Weekly
+Subscription##Time##12.99##Daily
+Subscription##Vogue##12.54##Weekly
 Back Log
 End Customer
 Begin Customer
-jonas##j,kl,j,k##2##0##0
+Kevin Jonas##114 Tiffany Lane,New Jersey,08234,Egg Harbor Township##2##0##0
 Subscriptions
-Subscription##fff##12##Weekly
+Subscription##Newspaper##5.03##Weekly
+Back Log
+End Customer
+Begin Customer
+Rick Jonas##300 Rowan Boulevard,Glassboro,New Jersey,08028##3##0##0
+Subscriptions
+Subscription##Maxim##3.99##Monthly
 Back Log
 End Customer

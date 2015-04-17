@@ -22,7 +22,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         //Purpose:
         //  Should this be delivered today?
         //  Will always return true since this is delivered daily
-        public new Boolean deliverToday(DateTime date)
+        public override Boolean deliverToday(DateTime date)
         {
             return true;
         }

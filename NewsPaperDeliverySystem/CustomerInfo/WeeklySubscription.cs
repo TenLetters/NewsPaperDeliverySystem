@@ -21,7 +21,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
         //Purpose:
         //  Should this be delivered today?
         //  Will return true if this is the day it is delivered on, false otherwise
-        public new Boolean deliverToday(DateTime date)
+        public override Boolean deliverToday(DateTime date)
         {
             if(date.DayOfWeek == DayOfWeek.Friday)
             {
