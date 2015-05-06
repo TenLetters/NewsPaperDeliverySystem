@@ -347,7 +347,7 @@ namespace NewsPaperDeliverySystem.CustomerInfo
             this.name = splitLine[0];
             // split up the address line
             string[] addressLine = splitLine[1].Split(',');
-            this.address = new Address(addressLine[0], addressLine[2], addressLine[3], addressLine[1]);
+            this.address = new Address(addressLine[0], addressLine[3], addressLine[1], addressLine[2]);
             this.id = int.Parse(splitLine[2]);
             this.vacationStart = DateTime.FromBinary(long.Parse(splitLine[3]));
             this.vacationEnd = DateTime.FromBinary(long.Parse(splitLine[4]));

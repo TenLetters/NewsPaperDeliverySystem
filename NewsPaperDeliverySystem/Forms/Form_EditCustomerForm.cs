@@ -197,7 +197,7 @@ namespace NewsPaperDeliverySystem.Forms
                 this.comboBoxState.Text = customerEditing.getAddress().getState();
 
                 // check if the customer is on vacation currently
-                if (DateTime.Now < customerEditing.getVacationStart() && DateTime.Now > customerEditing.getVacationEnd())
+                if (DateTime.Now > customerEditing.getVacationStart() && DateTime.Now < customerEditing.getVacationEnd())
                 {
                     this.textBoxVacationStatus.Text = "True";
                 }

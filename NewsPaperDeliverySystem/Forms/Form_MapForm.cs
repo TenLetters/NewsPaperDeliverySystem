@@ -39,8 +39,8 @@ namespace NewsPaperDeliverySystem.Forms
             }
 
             //https://www.google.com/maps/dir/112+Tiffany+Ln,+Egg+Harbor+Township,+NJ+08234,+USA/300+Rowan+Blvd,+Glassboro,+NJ+08028/First+St+NE,+Washington,+DC
-            this.webKitBrowser.Navigate("https://www.google.com/maps/dir/112+Tiffany+Ln,+Egg+Harbor+Township,+NJ+08234,+USA/300+Rowan+Blvd,+Glassboro,+NJ+08028/First+St+NE,+Washington,+DC");
-            //this.webBrowserMap.Navigate(queryAddress.ToString());
+            //this.webKitBrowser.Navigate("https://www.google.com/maps/dir/112+Tiffany+Ln,+Egg+Harbor+Township,+NJ+08234,+USA/300+Rowan+Blvd,+Glassboro,+NJ+08028/First+St+NE,+Washington,+DC");
+            this.webKitBrowser.Navigate(queryAddress.ToString());
         }
     }
 }

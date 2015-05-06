@@ -21,5 +21,4 @@ C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliveryS
 C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.Forms.Form_DeliveryLogForm.resources
 C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.Forms.Form_EditCustomerForm.resources
 C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\obj\x86\Debug\NewsPaperDeliverySystem.Forms.Form_MapForm.resources
-C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\bin\Debug\WebKitBrowser.dll
 C:\Users\AlexC\Visual Studio Projects\NewsPaperDeliverySystem\NewsPaperDeliverySystem\bin\Debug\WebKit.Interop.dll
