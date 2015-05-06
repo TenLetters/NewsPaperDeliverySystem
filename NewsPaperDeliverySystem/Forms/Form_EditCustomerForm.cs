@@ -95,40 +95,54 @@ namespace NewsPaperDeliverySystem.Forms
         //  Adds the text fields from the subscription group box into the list view of subscriptions
         private void buttonAddSubscription_Click(object sender, EventArgs e)
         {
-            try
+            // check for empty data fields 
+            if (this.textBoxSubscriptionName.Text.Equals(""))
             {
-                // save the data into a new list view item
-                ListViewItem lvi = new ListViewItem(this.textBoxSubscriptionName.Text);
+                MessageBox.Show("Please enter a name for the subscription before adding it", "Input error");
+            }
 
-                // check to make sure the user entered a double
-                String price = this.textBoxSubscriptionPrice.Text;
-                Double.Parse(price);
+            else if (this.comboBoxPeriod.Text.Equals(""))
+            {
+                MessageBox.Show("Please choose a period for the subscription before adding it", "Input error");
+            }
 
-                // format the price string if needed
-                if (!price.Contains("."))
+            else
+            {
+
+                try
                 {
-                    // if the user did not enter a decimal for the cents, add it
-                    price += ".00";
+                    // save the data into a new list view item
+                    ListViewItem lvi = new ListViewItem(this.textBoxSubscriptionName.Text);
+
+                    // check to make sure the user entered a double
+                    String price = this.textBoxSubscriptionPrice.Text;
+                    Double.Parse(price);
+
+                    // format the price string if needed
+                    if (!price.Contains("."))
+                    {
+                        // if the user did not enter a decimal for the cents, add it
+                        price += ".00";
+                    }
+
+                    //  add the remaining items to the list view item
+                    lvi.SubItems.Add(price);
+                    lvi.SubItems.Add(this.comboBoxPeriod.Text);
+
+                    // add the list view item to the list view
+                    this.listViewSubscriptions.Items.Add(lvi);
+
+                    // clear out the text boxes for the user
+                    this.textBoxSubscriptionName.Clear();
+                    this.textBoxSubscriptionPrice.Clear();
+
                 }
-
-                //  add the remaining items to the list view item
-                lvi.SubItems.Add(price);
-                lvi.SubItems.Add(this.comboBoxPeriod.Text);
-
-                // add the list view item to the list view
-                this.listViewSubscriptions.Items.Add(lvi);
-
-                // clear out the text boxes for the user
-                this.textBoxSubscriptionName.Clear();
-                this.textBoxSubscriptionPrice.Clear();
-
+                catch (Exception ex)
+                {
+                    // if the number entered for price was not a double, tell the user
+                    MessageBox.Show("Value for subscription price must be a number", "User Input Error");
+                }
             }
-            catch (Exception ex)
-            {
-                // if the number entered for price was not a double, tell the user
-                MessageBox.Show("Value for subscription price must be a number", "User Input Error");
-            }
-
 
 
         }
@@ -262,21 +276,48 @@ namespace NewsPaperDeliverySystem.Forms
         // edits the customer with all of the data the user has entered
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            // set the dialogResult to OK
-            this.DialogResult = DialogResult.OK;
+            // check for missing data
+            if (this.textBoxName.Text.Equals(""))
+            {
+                MessageBox.Show("Please enter a name", "Input Error");
+            }
 
-            // set the fields of the customer to those currently in the text box
-            customerEditing.setName(this.textBoxName.Text);
-            customerEditing.setAddress( 
-                    new Address(    this.textBoxAddress.Text,
-                                    this.textBoxZip.Text,
-                                    this.textBoxCity.Text,
-                                    this.comboBoxState.Text));
-            customerEditing.clearSubscriptions();
-            customerEditing.addSubscriptions(getSubscriptions());
-            customerEditing.setVacationStart(start);
-            customerEditing.setVacationEnd(end);
+            else if (this.textBoxAddress.Text.Equals(""))
+            {
+                MessageBox.Show("Please enter an address", "Input Error");
+            }
 
+            else if (this.textBoxZip.Text.Equals(""))
+            {
+            }
+
+            else if (this.textBoxCity.Text.Equals(""))
+            {
+                MessageBox.Show("Please enter a city name", "Input error");
+            }
+
+            else if (this.comboBoxState.Text.Equals(""))
+            {
+                MessageBox.Show("Please choose a state name", "Input error");
+            }
+
+            else
+            {
+                // set the dialogResult to OK
+                this.DialogResult = DialogResult.OK;
+
+                // set the fields of the customer to those currently in the text box
+                customerEditing.setName(this.textBoxName.Text);
+                customerEditing.setAddress(
+                        new Address(this.textBoxAddress.Text,
+                                        this.textBoxZip.Text,
+                                        this.textBoxCity.Text,
+                                        this.comboBoxState.Text));
+                customerEditing.clearSubscriptions();
+                customerEditing.addSubscriptions(getSubscriptions());
+                customerEditing.setVacationStart(start);
+                customerEditing.setVacationEnd(end);
+            }
         }
 
         // Purpose:

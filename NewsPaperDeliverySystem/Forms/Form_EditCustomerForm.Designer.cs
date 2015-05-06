@@ -273,6 +273,7 @@
             // 
             // listViewMatchingAddress
             // 
+            this.listViewMatchingAddress.BackColor = System.Drawing.SystemColors.ControlLight;
             this.listViewMatchingAddress.CheckBoxes = true;
             this.listViewMatchingAddress.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderCustomerName,

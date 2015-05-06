@@ -188,35 +188,47 @@ namespace NewsPaperDeliverySystem.Forms
         // adds the fields entered by the user into the list view of 
         private void buttonAddSubscription_Click(object sender, EventArgs e)
         {
-            try
+            // check for empty data fields
+            if (this.textBoxSubscriptionName.Text.Equals(""))
             {
-                String price = this.textBoxSubscriptionPrice.Text;
-
-                // verify that the user entered a proper value for price
-                Double.Parse(price);
-
-                // format the price string for the user if they did not add cents 
-                if (!price.Contains("."))
-                {
-                    price += ".00";
-                }
-                
-                // create a list view item with the fields of the subscription entered
-                ListViewItem lvi = new ListViewItem(this.textBoxSubscriptionName.Text);
-                lvi.SubItems.Add(price);
-                lvi.SubItems.Add(this.comboBoxPeriod.Text);
-
-                // add the list view item to the list view
-                this.listViewSubscriptions.Items.Add(lvi);
-
-                // clear out the text boxes for the user
-                this.textBoxSubscriptionName.Clear();
-                this.textBoxSubscriptionPrice.Clear();
+                MessageBox.Show("Please enter a name for the subscription before adding it", "Input error");
             }
-            catch (Exception ex)
+            else if (this.comboBoxPeriod.Text.Equals(""))
             {
-                // show a message if an exception was raised by trying to parse a double
-                MessageBox.Show("Price must be a numerical value", "User Error");
+                MessageBox.Show("Please choose a period for the subscription before adding it", "Input error");
+            }
+            else
+            {
+                try
+                {
+                    String price = this.textBoxSubscriptionPrice.Text;
+
+                    // verify that the user entered a proper value for price
+                    Double.Parse(price);
+
+                    // format the price string for the user if they did not add cents 
+                    if (!price.Contains("."))
+                    {
+                        price += ".00";
+                    }
+
+                    // create a list view item with the fields of the subscription entered
+                    ListViewItem lvi = new ListViewItem(this.textBoxSubscriptionName.Text);
+                    lvi.SubItems.Add(price);
+                    lvi.SubItems.Add(this.comboBoxPeriod.Text);
+
+                    // add the list view item to the list view
+                    this.listViewSubscriptions.Items.Add(lvi);
+
+                    // clear out the text boxes for the user
+                    this.textBoxSubscriptionName.Clear();
+                    this.textBoxSubscriptionPrice.Clear();
+                }
+                catch (Exception ex)
+                {
+                    // show a message if an exception was raised by trying to parse a double
+                    MessageBox.Show("Price must be a numerical value", "User Error");
+                }
             }
 
         }
